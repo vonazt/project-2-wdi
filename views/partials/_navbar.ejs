@@ -1,3 +1,24 @@
-<nav>
-  
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/images/home_vines.png" alt="vines">
+      Plant Tracker
+    </a>
+
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" id="navMenu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="/plants">My Plants</a>
+      <a class="navbar-item" href="/plants">Everyone's Plants</a>
+      <a class="navbar-item" href="/login">Login</a>
+      <a class="navbar-item" href="/logout">Logout</a>
+      <a class="navbar-item" href="/register">Register</a>
+    </div>
+  </div>
 </nav>

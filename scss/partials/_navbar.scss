@@ -1,0 +1,18 @@
+.navbar-brand {
+  font-family: $brand-font;
+  text-transform: uppercase;
+  font-size: 2em;
+  a {
+    color: $main-green;
+    &:hover {
+      color: $main-green;
+    }
+  }
+}
+
+.navbar-menu {
+  .navbar-item {
+    font-family: $main-font;
+    color: $main-green;
+  }
+}

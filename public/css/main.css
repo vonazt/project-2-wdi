@@ -2,4 +2,17 @@
   font-size: 3em;
   color: #228b22; }
 
+.navbar-brand {
+  font-family: "Nanum Pen Script", cursive;
+  text-transform: uppercase;
+  font-size: 2em; }
+  .navbar-brand a {
+    color: #228b22; }
+    .navbar-brand a:hover {
+      color: #228b22; }
+
+.navbar-menu .navbar-item {
+  font-family: "Poppins", sans-serif;
+  color: #228b22; }
+
 /*# sourceMappingURL=main.css.map */
