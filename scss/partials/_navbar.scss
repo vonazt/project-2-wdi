@@ -14,5 +14,8 @@
   .navbar-item {
     font-family: $main-font;
     color: $main-green;
+    &:hover {
+      color: $main-green;
+    }
   }
 }

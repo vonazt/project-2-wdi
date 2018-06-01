@@ -52,4 +52,11 @@ NAV:
   login
   logout
   register
-  
+
+PLANTS
+  plant name
+  plant type
+  date added
+  needs watering every x days
+  light required
+  image 
