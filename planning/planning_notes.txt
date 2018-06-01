@@ -17,7 +17,7 @@ central database of plants categorised by type
   - dual login for experts and amateurs?
 
 messages between users?
-users follow users? 
+users follow users?
 
 controllers:
   static
@@ -44,3 +44,12 @@ views:
 
   index
   layout
+
+NAV:
+  brand
+  plants
+  add plant
+  login
+  logout
+  register
+  
