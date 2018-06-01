@@ -1,0 +1,46 @@
+CONCEPT: an app for tracking house plants
+
+Functions: upload individual plant details:
+  name
+  plant type
+  date added
+  needs watering every x days
+  light info
+  image
+
+users get a reminder every x number of days to water their plant
+can upload multiple pictures to a gallery to track plant growth
+can comment on other users' plants and offer advice
+
+central database of plants categorised by type
+  - users can offer advice on plant care
+  - dual login for experts and amateurs?
+
+messages between users?
+users follow users? 
+
+controllers:
+  static
+  registrations
+  sessions
+  plants
+
+models:
+  user
+  plant
+
+views:
+  plants
+    edit
+    index
+    new
+    show
+
+  registrations
+    new
+
+  sessions
+    new
+
+  index
+  layout
