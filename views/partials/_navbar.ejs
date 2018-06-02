@@ -14,12 +14,16 @@
 
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-end">
-      <a class="navbar-item" href="/plants">My Plants</a>
-      <a class="navbar-item" href="/plants/new">Add Plant</a>
-      <a class="navbar-item" href="/plants">Everyone's Plants</a>
-      <a class="navbar-item" href="/login">Login</a>
-      <a class="navbar-item" href="/logout">Logout</a>
-      <a class="navbar-item" href="/register">Register</a>
+      <% if (locals.isLoggedIn) { %>
+        <p class="navbar-item">Welcome <%= locals.currentUser.username %></p>
+        <a class="navbar-item" href="/plants">My Plants</a>
+        <a class="navbar-item" href="/plants/new">Add Plant</a>
+        <a class="navbar-item" href="/plants">Plant Collection</a>
+        <a class="navbar-item" href="/logout">Logout</a>
+      <% } else  { %>
+        <a class="navbar-item" href="/login">Login</a>
+        <a class="navbar-item" href="/register">Register</a>
+      <% } %>
     </div>
   </div>
 </nav>

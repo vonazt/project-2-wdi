@@ -12,7 +12,7 @@ function createRoute(req, res) {
         res.status(401).render('sessions/new', { message: 'Unrecognised email or password' });
       }
       req.session.userId = user.id;
-      res.redirect('/');
+      res.redirect('/plants');
     });
 }
 
