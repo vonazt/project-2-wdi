@@ -29,6 +29,9 @@
   margin-left: 1em;
   margin-bottom: 1em; }
 
+.alert {
+  margin-left: 1em; }
+
 .details-form {
   font-family: "Poppins", sans-serif;
   width: 50%;
@@ -65,8 +68,14 @@
 .plant-details {
   line-height: 0; }
 
+.show {
+  line-height: 1em; }
+
 #submit-button {
   background-color: #228b22; }
+
+body {
+  font-family: "Poppins", sans-serif; }
 
 .columns {
   margin: 0 auto; }

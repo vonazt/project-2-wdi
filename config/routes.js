@@ -8,9 +8,12 @@ const sessions = require('../controllers/sessions');
 
 function secureRoute(req, res, next) {
   if(!req.session.userId) {
-    return req.session.regenerate(() => res.redirect('/login'));
+    return req.session.regenerate(() => {
+      req.flash('danger', 'You must be logged in');
+      res.redirect('/login');
+    });
   }
-  next();
+  return next();
 }
 
 router.route('/')

@@ -1,3 +1,16 @@
-<h2><%= plant.name %></h2>
-<img src="<%= plant.image %>" alt="">
-<p><%= plant.datePlanted %></p>
+<div class="container">
+  <div class="columns">
+    <div class="column is-half-desktop">
+      <h2><%= plant.name %></h2>
+      <img src="<%= plant.image %>" alt="">
+    </div>
+    <div class="column is-quarter-desktop">
+      <p class="plant-details show"><strong>Species:</strong> <%= plant.species %></p>
+      <p class="plant-details show"><strong>Planted on:</strong> <%= plant.datePlanted %></p>
+      <p class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</p>
+      <p class="plant-details show"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
+      <p class="plant-details show"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
+    </div>
+  </div>
+
+</div>
