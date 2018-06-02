@@ -29,7 +29,7 @@
   margin-left: 1em;
   margin-bottom: 1em; }
 
-.new-user {
+.details-form {
   font-family: "Poppins", sans-serif;
   width: 50%;
   margin-left: 1em;
@@ -39,19 +39,19 @@
   .new-plant {
     width: 60%; }
 
-  .new-user {
+  .details-form {
     width: 60%; } }
 @media (max-width: 850px) {
   .new-plant {
     width: 80%; }
 
-  .new-user {
+  .details-form {
     width: 80%; } }
 @media (max-width: 550px) {
   .new-plant {
     width: 90%; }
 
-  .new-user {
+  .details-form {
     width: 90%; } }
 .plant-card {
   font-family: "Poppins", sans-serif;

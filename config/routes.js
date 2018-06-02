@@ -4,9 +4,17 @@ const router = express.Router();
 const statics = require('../controllers/statics');
 const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
+const sessions = require('../controllers/sessions');
 
 router.route('/')
   .get(statics.index);
+
+router.route('/login')
+  .get(sessions.new)
+  .post(sessions.create);
+
+router.route('/logout')
+  .get(sessions.delete);
 
 router.route('/register')
   .get(registrations.new)

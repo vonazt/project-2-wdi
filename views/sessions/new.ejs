@@ -1,10 +1,9 @@
 <div class="details-form">
-  <form action="/register" method="POST">
-    <div class="field">
-    <label class="label">Username</label>
-    <div class="control">
-      <input class="input" type="username" name="username">
-    </div>
+  <h2>Login</h2>
+  <% if(locals.message) { %>
+    <p><%= message %></p>
+  <% } %>
+  <form action="/login" method="POST">
     <div class="field">
     <label class="label">Email</label>
     <div class="control has-icons-left">
@@ -23,18 +22,9 @@
         </span>
       </p>
     </div>
-    <div class="field">
-      <label class="label">Confirm Password</label>
-      <p class="control has-icons-left">
-        <input class="input" type="password" name="passwordConfirmation">
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </p>
-    </div>
     <div class="field is-grouped">
       <div class="control">
-        <button class="button is-link" id="submit-button">Register</button>
+        <button class="button is-link" id="submit-button">Login</button>
       </div>
     </div>
   </form>
