@@ -3,9 +3,14 @@ const router = express.Router();
 
 const statics = require('../controllers/statics');
 const plants = require('../controllers/plants');
+const registrations = require('../controllers/registrations');
 
 router.route('/')
   .get(statics.index);
+
+router.route('/register')
+  .get(registrations.new)
+  .post(registrations.create);
 
 router.route('/plants')
   .get(plants.index)

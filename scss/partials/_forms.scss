@@ -5,8 +5,18 @@
   margin-bottom: 1em;
 }
 
+.new-user {
+  font-family: $main-font;
+  width: 50%;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
 @media (max-width: 1087px) {
   .new-plant {
+    width: 60%;
+  }
+  .new-user {
     width: 60%;
   }
 }
@@ -14,9 +24,15 @@
   .new-plant {
     width: 80%;
   }
+  .new-user {
+    width: 80%;
+  }
 }
 @media (max-width: 550px) {
   .new-plant {
+    width: 90%;
+  }
+  .new-user {
     width: 90%;
   }
 }
