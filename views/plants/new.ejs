@@ -1,96 +1,98 @@
-<div class="new-plant">
-  <h2 class="plant-heading">Add a new plant</h2>
-  <form action="/plants" method="POST">
-    <div class="field">
-      <label class="label">Plant name</label>
-      <div class="control">
-        <input class="input" type="text" name="name">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Species</label>
-      <div class="control">
-        <input class="input" type="text" name="species">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Planted on:</label>
-      <div class="control">
-        <input class="input" type="date" name="datePlanted">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">How often should it be watered? (days)</label>
-      <div class="control">
-        <input class="input" type="number" name="wateringSchedule">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Soil should be:</label>
-      <div class="control">
-        <div class="select">
-          <select name="soilShouldBe">
-            <option></option>
-            <option>Wet</option>
-            <option>Damp</option>
-            <option>Dry</option>
-          </select>
+<section class="section">
+  <div class="container">
+    <h2 class="plant-heading">Add a new plant</h2>
+    <form action="/plants" method="POST">
+      <div class="field">
+        <label class="label">Plant name</label>
+        <div class="control">
+          <input class="input" type="text" name="name">
         </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Sunlight:</label>
-      <div class="control">
-        <div class="select">
-          <select>
-            <option></option>
-            <option name="sunlightRequired">Direct</option>
-            <option name="sunlightRequired">Indirect</option>
-          </select>
+      <div class="field">
+        <label class="label">Species</label>
+        <div class="control">
+          <input class="input" type="text" name="species">
         </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Care tips:</label>
-      <div class="control">
-        <textarea class="textarea" name="careTips"></textarea>
+      <div class="field">
+        <label class="label">Planted on:</label>
+        <div class="control">
+          <input class="input" type="date" name="datePlanted">
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Picture of plant</label>
-      <div class="control">
-        <input class="url" type="text" name="image">
+      <div class="field">
+        <label class="label">How often should it be watered? (days)</label>
+        <div class="control">
+          <input class="input" type="number" name="wateringSchedule">
+        </div>
       </div>
-    </div>
 
-  <%# <div class="file has-name is-full-width">
-      <label class="file-label">
-        <input class="file-input" type="file" name="image" id="file">
-        <span class="file-cta">
-          <span class="file-icon">
-            <i class="fas fa-upload"></i>
+      <div class="field">
+        <label class="label">Soil should be:</label>
+        <div class="control">
+          <div class="select">
+            <select name="soilShouldBe">
+              <option></option>
+              <option>Wet</option>
+              <option>Damp</option>
+              <option>Dry</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Sunlight:</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option></option>
+              <option name="sunlightRequired">Direct</option>
+              <option name="sunlightRequired">Indirect</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Care tips:</label>
+        <div class="control">
+          <textarea class="textarea" name="careTips"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Picture of plant</label>
+        <div class="control">
+          <input class="url" type="text" name="image">
+        </div>
+      </div>
+
+    <%# <div class="file has-name is-full-width">
+        <label class="file-label">
+          <input class="file-input" type="file" name="image" id="file">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label" id="filename">
+              Upload a picture
+            </span>
           </span>
-          <span class="file-label" id="filename">
-            Upload a picture
-          </span>
-        </span>
-      </label>
-    </div>  %>
+        </label>
+      </div>  %>
 
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="button is-link" id="submit-button">Submit</button>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link" id="submit-button">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-text">Cancel</button>
+        </div>
       </div>
-      <div class="control">
-        <button class="button is-text">Cancel</button>
-      </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
+</section>

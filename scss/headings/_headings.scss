@@ -3,7 +3,12 @@
   color: $main-green;
   font-family: $main-font;
   margin-bottom: .5em;
-  margin-left: .4em;
+}
+
+.show-plant-heading {
+  font-size: 2em;
+  color: $main-green;
+  font-family: $main-font;
 }
 
 @media (max-width: 433px) {
