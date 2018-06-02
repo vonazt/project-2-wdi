@@ -43,10 +43,12 @@ function editRoute(req, res) {
 function updateRoute(req, res) {
   Plant
     .findById(req.params.id)
-    .update(req.body)
-    .then( plant => {
-      return res.redirect(`/plants/${plant.id}`);
-    });
+    .exec()
+    .then((plant) => {
+      Object.assign(plant, req.body);
+      return plant.save();
+    })
+    .then(() => res.redirect(`/plants/${req.params.id}`));
 }
 
 function deleteRoute(req, res) {
