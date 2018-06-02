@@ -33,11 +33,11 @@
     <label class="label">Soil should be:</label>
     <div class="control">
       <div class="select">
-        <select>
+        <select name="soilShouldBe" value="<%= plant.soilShouldBe %>">
           <option></option>
-          <option name="soilShouldBe" value="<%= plant.soilShouldBe %>">Wet</option>
-          <option name="soilShouldBe" value="<%= plant.soilShouldBe %>">Damp</option>
-          <option name="soilShouldBe" value="<%= plant.soilShouldBe %>">Dry</option>
+          <option>Wet</option>
+          <option>Damp</option>
+          <option>Dry</option>
         </select>
       </div>
     </div>
@@ -47,10 +47,10 @@
     <label class="label">Sunlight:</label>
     <div class="control">
       <div class="select">
-        <select>
+        <select name="sunlightRequired" value="<%= plant.sunlightRequired %>">
           <option></option>
-          <option name="sunlightRequired" value="<%= plant.sunlightRequired %>">Direct</option>
-          <option name="sunlightRequired" value="<%= plant.sunlightRequired %>">Indirect</option>
+          <option>Direct</option>
+          <option>Indirect</option>
         </select>
       </div>
     </div>

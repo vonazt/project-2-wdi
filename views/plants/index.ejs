@@ -2,38 +2,35 @@
 <div class="columns is-multiline">
   <% plants.forEach( plant => { %>
   <div class="column is-one-third-desktop is-half-desktop">
-    <a href="plants/<%= plant.id %>">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image">
-          <img src="<%= plant.image %>" alt="<%= plant.name %>">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4"><%= plant.name %></p>
-    </a>
-            <p class="subtitle is-6"><%= plant.species %></p>
-            <p class="subtitle is-6"><%= plant.datePlanted %></p>
-            <p class="subtitle is-6"><%= plant.wateringSchedule %></p>
-            <p class="subtitle is-6"><%= plant.soilShouldBe %></p>
-            <p class="subtitle is-6"><%= plant.sunlightRequired %></p>
+      <a href="plants/<%= plant.id %>">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image">
+            <img src="<%= plant.image %>" alt="<%= plant.name %>">
+          </figure>
+        </div>
+        <div class="plant-card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="plant-name title is-4"><%= plant.name %></p>
+      </a>
+              <p class="plant-details subtitle is-6"><strong>Species:</strong> <%= plant.species %></p>
+              <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.datePlanted %></p>
+              <p class="plant-details subtitle is-6"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</p>
+              <p class="plant-details subtitle is-6"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
+              <p class="plant-details subtitle is-6"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
+            </div>
           </div>
         </div>
-
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris.
-        </div>
+        <footer class="card-footer">
+          <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
+          <form action="/plants/<%= plant.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button name="button" class="delete-button card-footer-item">Delete</button>
+          </form>
+        </footer>
       </div>
-      <footer class="card-footer">
-        <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
-        <form action="/plants/<%= plant.id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <button name="button">Delete</button>
-        </form>
-      </footer>
     </div>
   </div>
   <% }) %>
