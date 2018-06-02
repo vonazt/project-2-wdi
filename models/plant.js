@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const plantSchema = new mongoose.Schema({
   name: String,
   species: String,
-  datePlanted: new Date,
+  datePlanted: Date,
   wateringSchedule: Number,
   soilShouldBe: String,
   sunlightRequired: Number,

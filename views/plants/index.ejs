@@ -1,33 +1,33 @@
 <h1 class="plant-heading">Your plants</h1>
-  <% plants.forEach( plant => { %>
-    <a href="plants/<% plant.id %>">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img src="<%= plant.image %>" alt="<%= plant.name %>">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4"><%= plant.name %></p>
-    </a>
-            <p class="subtitle is-6"><%= plant.species %></p>
-            <p class="subtitle is-6"><%= plant.datePlanted %></p>
-            <p class="subtitle is-6"><%= plant.wateringSchedule %></p>
-            <p class="subtitle is-6"><%= plant.soilShouldBe %></p>
-            <p class="subtitle is-6"><%= plant.sunlightRequired %></p>
-          </div>
-        </div>
-
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris.
-        </div>
-      </div>
-      <footer class="card-footer">
-        <a href="/plants/edit" class="card-footer-item">Edit</a>
-        <a href="/plants/delete" class="card-footer-item">Delete</a>
-      </footer>
+<% plants.forEach( plant => { %>
+  <a href="plants/<% plant.id %>">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="<%= plant.image %>" alt="<%= plant.name %>">
+      </figure>
     </div>
-  <% }) %>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4"><%= plant.name %></p>
+  </a>
+          <p class="subtitle is-6"><%= plant.species %></p>
+          <p class="subtitle is-6"><%= plant.datePlanted %></p>
+          <p class="subtitle is-6"><%= plant.wateringSchedule %></p>
+          <p class="subtitle is-6"><%= plant.soilShouldBe %></p>
+          <p class="subtitle is-6"><%= plant.sunlightRequired %></p>
+        </div>
+      </div>
+
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus nec iaculis mauris.
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="/plants/edit" class="card-footer-item">Edit</a>
+      <a href="/plants/delete" class="card-footer-item">Delete</a>
+    </footer>
+  </div>
+<% }) %>
