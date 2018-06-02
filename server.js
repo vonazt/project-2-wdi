@@ -3,20 +3,43 @@ const mongoose = require('mongoose');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 const routes = require('./config/routes');
-
-const app = express();
-
+const User = require('./models/user');
 const { port, dbURI } = require('./config/environment');
 
 mongoose.connect(dbURI);
+
+const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 app.use(ejsLayouts);
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+  secret: 'very secure',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use((req, res, next) => {
+  if (!req.session.userId) return next();
+
+  User
+    .findById(req.session.userId)
+    .then(user => {
+      if (!user) req.session.regenerate(() => res.redirect('/login'));
+
+      res.locals.isLoggedIn = true;
+      res.locals.currentUser = user;
+      req.currentUser = user;
+
+      next();
+    });
+});
 
 app.use(methodOverride(function (req) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {

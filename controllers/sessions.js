@@ -1,6 +1,6 @@
 const User = require('../models/user');
 
-function sessionsCreate(req, res) {
+function createRoute(req, res) {
   User
     .findOne({ email: req.body.email })
     .then( (user) => {
