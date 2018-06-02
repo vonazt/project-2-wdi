@@ -18,10 +18,10 @@ app.use(ejsLayouts);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(methodOverride(function (req, res) {
+app.use(methodOverride(function (req) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-    const method = req.body_method;
-    delete req.body_method;
+    const method = req.body._method;
+    delete req.body._method;
     return method;
   }
 }));
