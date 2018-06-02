@@ -6,6 +6,13 @@ const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 
+function secureRoute(req, res, next) {
+  if(!req.session.userId) {
+    return req.session.regenerate(() => res.redirect('/login'));
+  }
+  next();
+}
+
 router.route('/')
   .get(statics.index);
 
@@ -21,16 +28,16 @@ router.route('/register')
   .post(registrations.create);
 
 router.route('/plants')
-  .get(plants.index)
+  .get(secureRoute, plants.index)
   .post(plants.create);
 router.route('/plants/new')
-  .get(plants.new);
+  .get(secureRoute, plants.new);
 router.route('/plants/:id')
-  .get(plants.show)
-  .put(plants.update)
-  .delete(plants.delete);
+  .get(secureRoute, plants.show)
+  .put(secureRoute, plants.update)
+  .delete(secureRoute, plants.delete);
 router.route('/plants/:id/edit')
-  .get(plants.edit);
+  .get(secureRoute, plants.edit);
 
 
 module.exports = router;

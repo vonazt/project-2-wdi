@@ -4,6 +4,7 @@ const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const flash = require('express-flash');
 
 const routes = require('./config/routes');
 const User = require('./models/user');
@@ -24,6 +25,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+app.use(flash());
 
 app.use((req, res, next) => {
   if (!req.session.userId) return next();
