@@ -1,7 +1,12 @@
 .plant-heading {
   font-size: 3em;
-  color: #228b22; }
+  color: #228b22;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: .5em; }
 
+@media (max-width: 433px) {
+  .plant-heading {
+    font-size: 2.3em; } }
 .navbar-brand {
   font-family: "Nanum Pen Script", cursive;
   text-transform: uppercase;
@@ -16,5 +21,23 @@
   color: #228b22; }
   .navbar-menu .navbar-item:hover {
     color: #228b22; }
+
+.new-plant {
+  font-family: "Poppins", sans-serif;
+  width: 50%;
+  margin-left: 1em;
+  margin-bottom: 1em; }
+
+@media (max-width: 1087px) {
+  .new-plant {
+    width: 60%; } }
+@media (max-width: 850px) {
+  .new-plant {
+    width: 80%; } }
+@media (max-width: 550px) {
+  .new-plant {
+    width: 90%; } }
+#submit-button {
+  background-color: #228b22; }
 
 /*# sourceMappingURL=main.css.map */

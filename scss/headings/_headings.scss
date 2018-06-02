@@ -1,4 +1,12 @@
 .plant-heading {
   font-size: 3em;
   color: $main-green;
+  font-family: $main-font;
+  margin-bottom: .5em;
+}
+
+@media (max-width: 433px) {
+  .plant-heading {
+    font-size: 2.3em;
+  }
 }
