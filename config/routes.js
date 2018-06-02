@@ -8,7 +8,16 @@ router.route('/')
   .get(statics.index);
 
 router.route('/plants')
-  .get(plants.index);
+  .get(plants.index)
+  .post(plants.create);
+router.route('/plants/new')
+  .get(plants.new);
+router.route('/plants/:id')
+  .get(plants.show)
+  .put(plants.update)
+  .delete(plants.delete);
+router.route('/plants/:id/edit')
+  .get(plants.edit);
 
 
 module.exports = router;
