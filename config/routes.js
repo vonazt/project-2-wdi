@@ -41,6 +41,8 @@ router.route('/plants/:id')
   .delete(secureRoute, plants.delete);
 router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);
+router.route('/plants/all')
+  .get(secureRoute, plants.all);
 
 router.route('/plants/:id/comments')
   .post(secureRoute, plants.commentCreate);

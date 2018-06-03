@@ -6,18 +6,33 @@
         <img class src="<%= plant.image %>" alt="<%= plant.species %>">
       </div>
       <div class="column is-quarter-desktop">
-        <p class="plant-details show"><strong>Species:</strong> <%= plant.species %></p>
-        <p class="plant-details show"><strong>Planted on:</strong> <%= plant.datePlanted %></p>
-        <p class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</p>
-        <p class="plant-details show"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
-        <p class="plant-details show"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
+        <ul>
+          <li class="plant-details show"><strong>Species:</strong> <%= plant.species %></li>
+          <li class="plant-details show"><strong>Planted on:</strong> <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></li>
+          <li class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</li>
+          <li class="plant-details show"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
+          <li class="plant-details show"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
+          <li>Comments</li>
+          <% plant.comments.forEach(comment => { %>
+          <li>
+            <p><%= comment.content %></p>
+            <p>Submitted by: <%= comment.commenter %></p>
+            <form action="/plants/<%= plant.id %>/comments/<%= comment.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <button name="button">Delete</button>
+            </form>
+          </li>
+          <% }) %>
+        </ul>
         <form action="/plants/<%= plant.id %>/comments" method="POST">
           <article class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </figure>
+            <% if (user.profilePic ) { %>
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </p>
+              </figure>
+            <% } %>
             <div class="media-content">
               <div class="field">
                 <p class="control">
@@ -34,18 +49,7 @@
             </div>
           </article>
         </form>
-        <ul>
-          <% plant.comments.forEach(comment => { %>
-            <li>
-              <p><%= comment.content %></p>
-              <p>Submitted by: <%= comment.commenter %></p>
-              <form action="/plants/<%= plant.id %>/comments/<%= comment.id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <button name="button">Delete</button>
-              </form>
-            </li>
-          <% }) %>
-        </ul>
+
       </div>
     </div>
   </div>

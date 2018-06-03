@@ -11,6 +11,16 @@ function indexRoute(req, res) {
     });
 }
 
+function allRoute(req, res) {
+  Plant
+    .find()
+    .populate('creator')
+    .exec()
+    .then(plants => {
+      res.render('plants/all'), {plants};
+    });
+}
+
 function showRoute(req, res) {
   Plant
     .findById(req.params.id)
@@ -93,6 +103,7 @@ function commentDeleteRoute(req, res, next) {
 
 module.exports = {
   index: indexRoute,
+  all: allRoute,
   show: showRoute,
   new: newRoute,
   create: createRoute,
