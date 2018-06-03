@@ -12,13 +12,6 @@
   </head>
   <body class="has-navbar-fixed-top">
     <%- include ./partials/_navbar %>
-    <section class="section">
-      <div class="container">
-        <% for (const type in messages) { %>
-         <p class="alert alert-<%= type %>"><%= messages[type] %></p>
-        <% } %>
-        <%- body %>
-      </div>
-    </section>
+    <%- body %>
   </body>
 </html>

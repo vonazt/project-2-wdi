@@ -1,3 +1,10 @@
+.hero {
+  width: 100%;
+  background-color: blue; }
+
+.main-heading {
+  color: #228b22; }
+
 .plant-heading {
   font-size: 3em;
   color: #228b22;

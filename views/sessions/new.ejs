@@ -1,31 +1,35 @@
-<div class="details-form">
-  <h2>Login</h2>
-  <% if(locals.message) { %>
-    <p><%= message %></p>
-  <% } %>
-  <form action="/login" method="POST">
-    <div class="field">
-    <label class="label">Email</label>
-    <div class="control has-icons-left">
-      <input class="input" type="email" name="email">
-      <span class="icon is-small is-left">
-        <i class="fas fa-envelope"></i>
-      </span>
+<section class="section">
+  <div class="container">
+    <div class="details-form">
+      <h2 class="plant-heading">Login</h2>
+      <% for (const type in messages) { %>
+       <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+      <% } %>
+      <form action="/login" method="POST">
+        <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left">
+          <input class="input" type="email" name="email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <p class="control has-icons-left">
+            <input class="input" type="password" name="password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="submit-button button" >Login</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-    <div class="field">
-      <label class="label">Password</label>
-      <p class="control has-icons-left">
-        <input class="input" type="password" name="password">
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </p>
-    </div>
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="submit-button button" >Login</button>
-      </div>
-    </div>
-  </form>
-</div>
+</section>
