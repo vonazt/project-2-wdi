@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+const commentSchema = new mongoose.Schema({
+  content: { type: String, required: true },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+});
+
 const plantSchema = new mongoose.Schema({
   name: String,
   species: String,
@@ -9,9 +14,8 @@ const plantSchema = new mongoose.Schema({
   sunlightRequired: String,
   careTips: String,
   image: String,
-  comments: [{
-    content: { type: String}
-  }]
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  comments: [commentSchema]
 });
 
 module.exports = mongoose.model('Plant', plantSchema);

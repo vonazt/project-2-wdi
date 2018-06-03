@@ -7,6 +7,12 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
+userSchema.virtual('plants', {
+  ref: 'Plant',
+  foreignField: 'creator',
+  localField: '_id'
+});
+
 userSchema
   .virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {

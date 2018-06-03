@@ -33,6 +33,8 @@ app.use((req, res, next) => {
 
   User
     .findById(req.session.userId)
+    .populate({ path: 'plants', populate: { path: 'creator' }})
+    .exec()
     .then(user => {
       if (!user) req.session.regenerate(() => res.redirect('/login'));
 

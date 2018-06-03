@@ -4,6 +4,7 @@ const Plant = require('../models/plant');
 function indexRoute(req, res) {
   Plant
     .find()
+    .populate('creator')
     .exec()
     .then(plants => {
       res.render('plants/index', {plants});
@@ -13,6 +14,7 @@ function indexRoute(req, res) {
 function showRoute(req, res) {
   Plant
     .findById(req.params.id)
+    .populate('creator')
     .exec()
     .then(plant => {
       res.render('plants/show', {plant});
@@ -24,6 +26,8 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res) {
+  const plantData = req.body;
+  plantData['creator'] = res.locals.user.id;
   Plant
     .create(req.body)
     .then(plant => {
