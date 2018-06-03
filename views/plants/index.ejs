@@ -30,7 +30,7 @@
               <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
               <form class="card-footer-item" action="/plants/<%= plant.id %>" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
-                <button name="button" class="card-footer-item">Delete</button>
+                <button name="button" class="card-footer-item" id="delete-button">Delete</button>
               </form>
             </footer>
           </div>

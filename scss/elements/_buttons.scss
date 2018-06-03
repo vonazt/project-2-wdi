@@ -5,3 +5,16 @@
     color: white;
   }
 }
+
+#delete-button {
+  border: none;
+  color: #3273dc;
+  background-color: white;
+  font-size: 1em;
+  margin-bottom: .1em;
+  cursor: pointer;
+  padding: 0;
+  &:hover {
+    color: #363636;
+  }
+}

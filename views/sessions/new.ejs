@@ -5,6 +5,9 @@
       <% for (const type in messages) { %>
        <p class="alert alert-<%= type %>"><%= messages[type] %></p>
       <% } %>
+      <% if(locals.message) { %>
+        <p><%= message %></p>
+      <% } %>
       <form action="/login" method="POST">
         <div class="field">
         <label class="label">Email</label>
