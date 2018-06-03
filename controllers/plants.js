@@ -15,6 +15,7 @@ function showRoute(req, res) {
   Plant
     .findById(req.params.id)
     .populate('creator')
+    .populate('commenter')
     .exec()
     .then(plant => {
       res.render('plants/show', {plant});
@@ -65,11 +66,12 @@ function deleteRoute(req, res) {
 }
 
 function createCommentRoute(req, res, next) {
+  const commenter = req.body;
+  commenter['commenter'] = res.locals.user.id;
   Plant
     .findById(req.params.id)
     .then(plant => {
       plant.comments.push(req.body);
-      console.log(plant.comments);
       return plant.save();
     })
     .then(plant => res.redirect(`/plants/${plant.id}`))

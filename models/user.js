@@ -12,6 +12,11 @@ userSchema.virtual('plants', {
   foreignField: 'creator',
   localField: '_id'
 });
+userSchema.virtual('comments', {
+  ref: 'Plant',
+  foreignField: 'commenter',
+  localField: '_id'
+});
 
 userSchema
   .virtual('passwordConfirmation')
