@@ -39,8 +39,8 @@ app.use((req, res, next) => {
       if (!user) req.session.regenerate(() => res.redirect('/login'));
 
       res.locals.isLoggedIn = true;
-      res.locals.currentUser = user;
-      req.currentUser = user;
+      res.locals.user = user;
+      req.user = user;
 
       next();
     });
