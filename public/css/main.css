@@ -42,7 +42,10 @@
 .show {
   line-height: 1em; }
 
-#submit-button {
+.submit-button {
+  background-color: #228b22; }
+
+.button {
   background-color: #228b22; }
 
 body {

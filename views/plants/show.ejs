@@ -11,6 +11,35 @@
         <p class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</p>
         <p class="plant-details show"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
         <p class="plant-details show"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
+        <form action="plants/<%= plant.id %>/comments" method="POST">
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </figure>
+
+            <div class="media-content">
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                </p>
+              </div>
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <button class="button is-info submit-button" name="button">Submit</button>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </form>
+        <ul>
+          <% plant.comments.forEach(comment => { %>
+            <li>comment.content</li>
+          <% }) %>
+        </ul>
       </div>
     </div>
   </div>

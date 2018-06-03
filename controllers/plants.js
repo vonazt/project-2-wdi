@@ -92,5 +92,5 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   commentCreate: createCommentRoute,
-  deleteComment: commentDeleteRoute
+  commentDelete: commentDeleteRoute
 };
