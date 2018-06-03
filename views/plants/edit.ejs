@@ -35,8 +35,8 @@
         <label class="label">Soil should be:</label>
         <div class="control">
           <div class="select">
-            <select name="soilShouldBe" selected="<%= plant.soilShouldBe %>">
-              <option></option>
+            <select name="soilShouldBe">
+              <option value="<%= plant.soilShouldBe %>" selected="<%= plant.soilShouldBe %>"></option>
               <option>Wet</option>
               <option>Damp</option>
               <option>Dry</option>
@@ -88,7 +88,7 @@
 
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link">Submit</button>
+      <button class="submit-button button">Submit</button>
     </div>
     <div class="control">
       <button class="button is-text">Cancel</button>

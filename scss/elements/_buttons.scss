@@ -1,7 +1,7 @@
 .submit-button {
   background-color: $main-green;
-}
-
-.button {
-  background-color: $main-green;
+  color: white;
+  &:hover {
+    color: white;
+  }
 }

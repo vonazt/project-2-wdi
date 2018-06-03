@@ -43,10 +43,10 @@
   line-height: 1em; }
 
 .submit-button {
-  background-color: #228b22; }
-
-.button {
-  background-color: #228b22; }
+  background-color: #228b22;
+  color: white; }
+  .submit-button:hover {
+    color: white; }
 
 body {
   font-family: "Poppins", sans-serif; }
