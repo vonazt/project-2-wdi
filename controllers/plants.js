@@ -65,6 +65,7 @@ function createCommentRoute(req, res, next) {
     .findById(req.params.id)
     .then(plant => {
       plant.comments.push(req.body);
+      console.log(plant.comments);
       return plant.save();
     })
     .then(plant => res.redirect(`/plants/${plant.id}`))

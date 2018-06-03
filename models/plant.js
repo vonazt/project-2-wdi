@@ -10,7 +10,7 @@ const plantSchema = new mongoose.Schema({
   careTips: String,
   image: String,
   comments: [{
-    content: { type: String, required: true }
+    content: { type: String}
   }]
 });
 
