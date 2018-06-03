@@ -15,7 +15,7 @@ function showRoute(req, res) {
   Plant
     .findById(req.params.id)
     .populate('creator')
-    .populate('commenter')
+    .populate('comments')
     .exec()
     .then(plant => {
       res.render('plants/show', {plant});

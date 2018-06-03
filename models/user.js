@@ -13,8 +13,8 @@ userSchema.virtual('plants', {
   localField: '_id'
 });
 userSchema.virtual('comments', {
-  ref: 'Plant',
-  foreignField: 'commenter',
+  ref: 'User',
+  foreignField: 'comments',
   localField: '_id'
 });
 

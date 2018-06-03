@@ -2,7 +2,11 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title main-heading">
-        PLANT TRACKER
+        <% if (!locals.isLoggedIn) { %>
+          <a href="/login">PLANT TRACKER</a>
+        <% } else { %>
+          <a href="/plants/">PLANT TRACKER</a>
+        <% } %>
       </h1>
       <h2 class="subtitle">
         Track, share, grow
