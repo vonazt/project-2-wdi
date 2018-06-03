@@ -27,6 +27,7 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res) {
+  console.log(req.body);
   const plantData = req.body;
   plantData['creator'] = res.locals.user.id;
   Plant

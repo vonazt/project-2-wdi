@@ -8,7 +8,7 @@ const commentSchema = new mongoose.Schema({
 const plantSchema = new mongoose.Schema({
   name: String,
   species: String,
-  datePlanted: String,
+  datePlanted: Date,
   wateringSchedule: Number,
   soilShouldBe: String,
   sunlightRequired: String,

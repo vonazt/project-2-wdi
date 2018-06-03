@@ -9,7 +9,7 @@ const sessions = require('../controllers/sessions');
 function secureRoute(req, res, next) {
   if(!req.session.userId) {
     return req.session.regenerate(() => {
-      req.flash('danger', 'You must be logged in');
+      req.flash('danger', 'You must be logged in to view this page');
       res.redirect('/login');
     });
   }
