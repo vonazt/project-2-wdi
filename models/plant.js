@@ -8,7 +8,10 @@ const plantSchema = new mongoose.Schema({
   soilShouldBe: String,
   sunlightRequired: String,
   careTips: String,
-  image: String
+  image: String,
+  comments: [{
+    content: { type: String, required: true }
+  }]
 });
 
 module.exports = mongoose.model('Plant', plantSchema);

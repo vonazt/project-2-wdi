@@ -5,7 +5,7 @@ function indexRoute(req, res) {
   Plant
     .find()
     .exec()
-    .then( plants => {
+    .then(plants => {
       res.render('plants/index', {plants});
     });
 }
@@ -14,7 +14,7 @@ function showRoute(req, res) {
   Plant
     .findById(req.params.id)
     .exec()
-    .then( plant => {
+    .then(plant => {
       res.render('plants/show', {plant});
     });
 }
@@ -26,7 +26,7 @@ function newRoute(req, res) {
 function createRoute(req, res) {
   Plant
     .create(req.body)
-    .then( plant => {
+    .then(plant => {
       return res.redirect(`/plants/${plant.id}`);
     });
 }
@@ -35,7 +35,7 @@ function editRoute(req, res) {
   Plant
     .findById(req.params.id)
     .exec()
-    .then( plant => {
+    .then(plant => {
       res.render('plants/edit', {plant});
     });
 }
@@ -54,10 +54,33 @@ function updateRoute(req, res) {
 function deleteRoute(req, res) {
   Plant
     .findById(req.params.id)
-    .then( plant => {
+    .then(plant => {
       plant.remove();
       return res.redirect('/plants');
     });
+}
+
+function createCommentRoute(req, res, next) {
+  Plant
+    .findById(req.params.id)
+    .then(plant => {
+      plant.comments.push(req.body);
+      return plant.save();
+    })
+    .then(plant => res.redirect(`/plants/${plant.id}`))
+    .catch(next);
+}
+
+function commentDeleteRoute(req, res, next) {
+  Plant
+    .findById(req.params.id)
+    .then(plant => {
+      const comment = plant.comments.id(req.params.commentId);
+      comment.remove();
+      return plant.save();
+    })
+    .then(plant => res.redirect(`/plants/${plant.id}`))
+    .catch(next);
 }
 
 module.exports = {
@@ -67,5 +90,7 @@ module.exports = {
   create: createRoute,
   edit: editRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  commentCreate: createCommentRoute,
+  deleteComment: commentDeleteRoute
 };

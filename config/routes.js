@@ -42,5 +42,10 @@ router.route('/plants/:id')
 router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);
 
+router.route('/plants/:id/comments')
+  .post(secureRoute, plants.commentCreate);
+router.route('/plants/:id/comments/:commentId')
+  .delete(secureRoute, plants.commentDelete);
+
 
 module.exports = router;
