@@ -10,13 +10,11 @@ function createRoute(req, res) {
     .then((user) => {
       req.session.userId = user.id;
       return res.redirect('/');
+    })
+    .catch((err) => {
+      return res.status(401).render('registrations/new', {message: `${err}`});
     });
 }
-
-module.exports = {
-  new: newRoute,
-  create: createRoute
-};
 
 module.exports = {
   new: newRoute,
