@@ -33,6 +33,8 @@ router.route('/register')
 router.route('/plants')
   .get(secureRoute, plants.index)
   .post(plants.create);
+router.route('/plants/all')
+  .get(secureRoute, plants.all);
 router.route('/plants/new')
   .get(secureRoute, plants.new);
 router.route('/plants/:id')
@@ -41,8 +43,7 @@ router.route('/plants/:id')
   .delete(secureRoute, plants.delete);
 router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);
-router.route('/plants/all')
-  .get(secureRoute, plants.all);
+
 
 router.route('/plants/:id/comments')
   .post(secureRoute, plants.commentCreate);

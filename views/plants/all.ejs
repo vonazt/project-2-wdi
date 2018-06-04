@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <h1 class="plant-heading">Everyone's plants</h1>
+    <h1 class="plant-heading">All plants</h1>
     <div class="columns is-multiline">
       <% plants.forEach( plant => { %>
       <div class="column is-one-third-desktop is-half-tablet">
@@ -26,7 +26,7 @@
                 </div>
               </div>
             </div>
-            <% if (plant.creator) { %>
+            <% if (locals.user.id === plant.creator.id) { %>
               <footer class="card-footer">
                 <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
                 <form class="card-footer-item" action="/plants/<%= plant.id %>" method="POST">

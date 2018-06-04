@@ -16,7 +16,7 @@
           <% plant.comments.forEach(comment => { %>
           <li>
             <p><%= comment.content %></p>
-            <p>Submitted by: <%= comment.commenter %></p>
+            <p>Submitted by: <%= comment.commenter.username %></p>
             <form action="/plants/<%= plant.id %>/comments/<%= comment.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <button name="button">Delete</button>

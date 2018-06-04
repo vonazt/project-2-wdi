@@ -37,7 +37,8 @@
           <div class="select">
             <select name="soilShouldBe" selected="<%= plant.soilShouldBe %>">
               <option value=""></option>
-              <option value="Wet">Wet</option>
+          
+              <option selected="selected" value="Wet">Wet</option>
               <option value="Damp">Damp</option>
               <option value="Dry">Dry</option>
             </select>
@@ -61,7 +62,7 @@
       <div class="field">
         <label class="label">Care tips:</label>
         <div class="control">
-          <textarea class="textarea" name="careTips" value="<%= plant.careTips %>"></textarea>
+          <textarea class="textarea" name="careTips"><%= plant.careTips %></textarea>
         </div>
       </div>
 
