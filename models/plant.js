@@ -18,10 +18,8 @@ const plantSchema = new mongoose.Schema({
   comments: [commentSchema]
 });
 
-plantSchema.methods.formattedDatePlanted = function(page){
-  if (page === 'edit') return this.datePlanted.toISOString().slice(0,10);
-  else if (page === 'index') return this.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
+plantSchema.methods.formattedDatePlanted = function(page) {
+  return page === 'edit' ? this.datePlanted.toISOString().slice(0,10) : this.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
 };
-
 
 module.exports = mongoose.model('Plant', plantSchema);
