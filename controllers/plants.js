@@ -28,6 +28,7 @@ function showRoute(req, res) {
     .populate('comments.commenter')
     .exec()
     .then(plant => {
+      plant.daysUntilWatering();
       res.render('plants/show', {plant});
     });
 }
@@ -37,7 +38,6 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res) {
-  console.log(req.body);
   const plantData = req.body;
   plantData['creator'] = res.locals.user.id;
   Plant
@@ -72,10 +72,9 @@ function wateredRoute(req, res) {
     .findById(req.params.id)
     .exec()
     .then((plant) => {
-      Object.assign(plant.req.body);
-      return plant.save();
-    })
-    .then(() => res.redirect('/plants/index'));
+      plant.lastWatered();
+      res.redirect(`/plants/${req.params.id}`);
+    });
 }
 
 function deleteRoute(req, res) {

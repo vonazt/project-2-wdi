@@ -20,11 +20,7 @@
                   <p class="plant-details subtitle is-6"><strong>Species:</strong> <%= plant.species %></p>
                   <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></p>
                   <p class="plant-details subtitle is-6"><strong>Needs watering in</strong>  <%= plant.wateringSchedule %> days</p>
-                  <form class="watered-form" action="/plants/<%= plant.id %>/" method="POST">
-                    <input type="hidden" name="_method" value="PUT">
-                    <input class="watered" type="text" name="watered" value="true">
-                    <button class="plant-details subtitle is-6" id="watered-button">Watered</button>
-                  </form>
+                  <a href="/plants/<%= plant.id %>/watered">Watered</a>
                   <br/>
                   <p class="plant-details subtitle is-6"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
                   <p class="plant-details subtitle is-6"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
