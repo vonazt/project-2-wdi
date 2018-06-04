@@ -19,7 +19,13 @@
           </a>
                   <p class="plant-details subtitle is-6"><strong>Species:</strong> <%= plant.species %></p>
                   <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></p>
-                  <p class="plant-details subtitle is-6"><strong>Needs watering in</strong>  <%= plant.daysUntilWatering() %> days</p>
+                  <% if (plant.daysUntilWatering() === 0) { %>
+                    <p class="plant-details subtitle is-6"><strong>Water today!</p>
+                  <%} else if (plant.daysUntilWatering() === 1) { %>
+                    <p class="plant-details subtitle is-6"><strong>Water in</strong>  <%= plant.daysUntilWatering() %> day</p>
+                  <% } else { %>
+                    <p class="plant-details subtitle is-6"><strong>Water in</strong>  <%= plant.daysUntilWatering() %> days</p>
+                  <% } %>
                   <a href="/plants/<%= plant.id %>/watered">Watered</a>
                   <br/>
                   <br/>
