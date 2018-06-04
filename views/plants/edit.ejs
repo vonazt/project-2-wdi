@@ -20,7 +20,8 @@
       <div class="field">
         <label class="label">Planted on:</label>
         <div class="control">
-          <input class="input" type="date" name="datePlanted" value="<%= plant.datePlanted %>">
+
+          <input class="input" type="date" name="datePlanted" value="<%= plant.formattedDatePlanted('edit') %>">
         </div>
       </div>
 
@@ -36,11 +37,13 @@
         <div class="control">
           <div class="select">
             <select name="soilShouldBe" selected="<%= plant.soilShouldBe %>">
-              <option value=""></option>
-          
-              <option selected="selected" value="Wet">Wet</option>
-              <option value="Damp">Damp</option>
-              <option value="Dry">Dry</option>
+              <% ["Wet", "Damp", "Dry"].forEach(item => { %>
+                <% if(plant.soilShouldBe === item){ %>
+                  <option selected="selected" value="<%= item %>"><%= item %></option>
+                <% } else { %>
+                  <option><%= item %></option>
+                <% } %>
+              <% }) %>
             </select>
           </div>
         </div>
@@ -51,9 +54,13 @@
         <div class="control">
           <div class="select">
             <select name="sunlightRequired" selected="<%= plant.sunlightRequired %>">
-              <option></option>
-              <option>Direct</option>
-              <option>Indirect</option>
+              <% ["Direct", "Indirect"].forEach(item => { %>
+                <% if(plant.sunlightRequired === item){ %>
+                  <option selected="selected" value="<%= item %>"><%= item %></option>
+                <% } else { %>
+                  <option><%= item %></option>
+                <% } %>
+              <% }) %>
             </select>
           </div>
         </div>

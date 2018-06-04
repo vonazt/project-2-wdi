@@ -5,28 +5,28 @@
       <div class="field">
         <label class="label">Plant name</label>
         <div class="control">
-          <input class="input" type="text" name="name">
+          <input class="input" type="text" name="name" required>
         </div>
       </div>
 
       <div class="field">
         <label class="label">Species</label>
         <div class="control">
-          <input class="input" type="text" name="species">
+          <input class="input" type="text" name="species" required>
         </div>
       </div>
 
       <div class="field">
         <label class="label">Planted on:</label>
         <div class="control">
-          <input class="input" type="date" name="datePlanted">
+          <input class="input" type="date" name="datePlanted" required>
         </div>
       </div>
 
       <div class="field">
         <label class="label">How often should it be watered? (days)</label>
         <div class="control">
-          <input class="input" type="number" name="wateringSchedule">
+          <input class="input" type="number" name="wateringSchedule" required>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
         <label class="label">Soil should be:</label>
         <div class="control">
           <div class="select">
-            <select name="soilShouldBe">
+            <select name="soilShouldBe" required>
               <option></option>
               <option>Wet</option>
               <option>Damp</option>
@@ -48,7 +48,7 @@
         <label class="label">Sunlight:</label>
         <div class="control">
           <div class="select">
-            <select>
+            <select name="sunlightRequired" required>
               <option></option>
               <option name="sunlightRequired">Direct</option>
               <option name="sunlightRequired">Indirect</option>

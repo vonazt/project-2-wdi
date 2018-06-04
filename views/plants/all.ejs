@@ -18,7 +18,7 @@
                   <p class="plant-name title is-4"><%= plant.name %></p>
           </a>
                   <p class="plant-details subtitle is-6"><strong>Species:</strong> <%= plant.species %></p>
-                  <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></p>
+                  <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></p>
                   <p class="plant-details subtitle is-6"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</p>
                   <p class="plant-details subtitle is-6"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
                   <p class="plant-details subtitle is-6"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
