@@ -7,7 +7,6 @@ function indexRoute(req, res) {
     .populate('creator')
     .exec()
     .then(plants => {
-      plants.forEach(plant => plant.daysUntilWatering());
       res.render('plants/index', {plants});
     });
 }

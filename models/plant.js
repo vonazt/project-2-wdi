@@ -37,6 +37,7 @@ plantSchema.methods.daysUntilWatering = function() {
   const daysSinceWatering = this.wateredDate / (60*60*24*1000);
   const daysUntilWatering = Math.ceil((daysSinceWatering + this.wateringSchedule) - todayInDays);
   this.waterIn = daysUntilWatering;
+  return daysUntilWatering;
 };
 
 
