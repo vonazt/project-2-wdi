@@ -6,6 +6,8 @@ const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 
+const upload = require('../lib/s3-upload');
+
 function secureRoute(req, res, next) {
   if(!req.session.userId) {
     return req.session.regenerate(() => {
@@ -32,7 +34,7 @@ router.route('/register')
 
 router.route('/plants')
   .get(secureRoute, plants.index)
-  .post(plants.create);
+  .post(upload.single('file'), plants.create);
 router.route('/plants/all')
   .get(secureRoute, plants.all);
 router.route('/plants/new')

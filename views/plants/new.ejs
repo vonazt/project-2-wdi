@@ -1,7 +1,7 @@
 <section class="section">
   <div class="container">
     <h2 class="plant-heading">Add a new plant</h2>
-    <form action="/plants" method="POST">
+    <form enctype="multipart/form-data" action="/plants" method="POST">
       <div class="field">
         <label class="label">Plant name</label>
         <div class="control">
@@ -64,14 +64,8 @@
         </div>
       </div>
 
-      <div class="field">
-        <label class="label">Picture of plant</label>
-        <div class="control">
-          <input class="url" type="text" name="image">
-        </div>
-      </div>
 
-    <%# <div class="file has-name is-full-width">
+     <div class="file has-name is-full-width">
         <label class="file-label">
           <input class="file-input" type="file" name="image" id="file">
           <span class="file-cta">
@@ -83,7 +77,8 @@
             </span>
           </span>
         </label>
-      </div>  %>
+      </div>
+
 
       <div class="field is-grouped">
         <div class="control">
