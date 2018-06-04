@@ -12,6 +12,7 @@
           <li class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</li>
           <li class="plant-details show"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
           <li class="plant-details show"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
+          <p class="plant-details"><strong>Needs watering in</strong>  <%= plant.waterIn %> days</p>
           <li>Comments</li>
           <% plant.comments.forEach(comment => { %>
           <li>

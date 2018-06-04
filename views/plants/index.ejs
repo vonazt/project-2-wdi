@@ -19,7 +19,7 @@
           </a>
                   <p class="plant-details subtitle is-6"><strong>Species:</strong> <%= plant.species %></p>
                   <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></p>
-                  <p class="plant-details subtitle is-6"><strong>Needs watering in</strong>  <%= plant.wateringSchedule %> days</p>
+                  <p class="plant-details subtitle is-6"><strong>Needs watering in</strong>  <%= plant.waterIn %> days</p>
                   <a href="/plants/<%= plant.id %>/watered">Watered</a>
                   <br/>
                   <br/>

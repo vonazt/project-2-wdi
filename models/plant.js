@@ -12,6 +12,7 @@ const plantSchema = new mongoose.Schema({
   datePlanted: Date,
   wateringSchedule: Number,
   wateredDate: Number,
+  waterIn: Number,
   soilShouldBe: String,
   sunlightRequired: String,
   careTips: String,
@@ -26,20 +27,16 @@ plantSchema.methods.formattedDatePlanted = function(page) {
 
 plantSchema.methods.lastWatered = function() {
   const wateredOn  = new Date();
-  console.log(this);
   this.wateredDate = wateredOn.getTime();
-  console.log(this.wateredDate);
-  console.log(this.wateredDate);
   this.save();
-  console.log(this);
 };
 
 plantSchema.methods.daysUntilWatering = function() {
   const today = new Date();
-  console.log(this.wateredDate);
-  console.log(today.getTime());
-  // console.log(this.watered);
-  // console.log(daysUntilWater);
+  const todayInDays = today.getTime() / (60*60*24*1000);
+  const daysSinceWatering = this.wateredDate / (60*60*24*1000);
+  const daysUntilWatering = Math.ceil((daysSinceWatering + this.wateringSchedule) - todayInDays);
+  this.waterIn = daysUntilWatering;
 };
 
 

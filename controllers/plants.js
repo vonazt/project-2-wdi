@@ -7,6 +7,7 @@ function indexRoute(req, res) {
     .populate('creator')
     .exec()
     .then(plants => {
+      plants.forEach(plant => plant.daysUntilWatering());
       res.render('plants/index', {plants});
     });
 }
@@ -17,6 +18,7 @@ function allRoute(req, res) {
     .populate('creator')
     .exec()
     .then(plants => {
+      plants.forEach(plant => plant.daysUntilWatering());
       res.render('plants/all', {plants});
     });
 }
@@ -43,6 +45,7 @@ function createRoute(req, res) {
   Plant
     .create(req.body)
     .then(plant => {
+      plant.lastWatered();
       return res.redirect(`/plants/${plant.id}`);
     });
 }
