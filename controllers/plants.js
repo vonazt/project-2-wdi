@@ -40,6 +40,8 @@ function newRoute(req, res) {
 
 function createRoute(req, res) {
   const plantData = req.body;
+  plantData['image'] = req.file.location;
+  plantData['fileMetadata'] = req.file;
   plantData['creator'] = res.locals.user.id;
   Plant
     .create(req.body)

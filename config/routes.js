@@ -34,7 +34,7 @@ router.route('/register')
 
 router.route('/plants')
   .get(secureRoute, plants.index)
-  .post(upload.single('file'), plants.create);
+  .post(upload.single('image'), plants.create);
 router.route('/plants/all')
   .get(secureRoute, plants.all);
 router.route('/plants/new')
