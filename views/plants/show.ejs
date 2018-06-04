@@ -7,6 +7,8 @@
       </div>
       <div class="column is-quarter-desktop">
         <ul>
+          <%= plant.lastWatered() %>
+          <%= plant.wateredTracker.lastWatered %> <%= plant.wateredTracker.waterIn %> days
           <li class="plant-details show"><strong>Species:</strong> <%= plant.species %></li>
           <li class="plant-details show"><strong>Planted on:</strong> <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></li>
           <li class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</li>

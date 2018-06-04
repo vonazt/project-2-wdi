@@ -43,8 +43,8 @@ router.route('/plants/:id')
   .delete(secureRoute, plants.delete);
 router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);
-router.route('plants/:id/watered')
-  .put(secureRoute, plants.watered);
+// router.route('plants/watered/:id/')
+//   .put(secureRoute, plants.watered);
 
 
 router.route('/plants/:id/comments')
