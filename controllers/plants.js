@@ -73,8 +73,8 @@ function wateredRoute(req, res) {
     .exec()
     .then((plant) => {
       plant.lastWatered();
-      res.redirect(`/plants/${req.params.id}`);
-    });
+    })
+    .then(() => res.redirect(`/plants/${req.params.id}`));
 }
 
 function deleteRoute(req, res) {

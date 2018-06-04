@@ -5,20 +5,13 @@ const commentSchema = new mongoose.Schema({
   commenter: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
-const wateredSchema = new mongoose.Schema({
-  lastWatered: Number,
-  waterIn: Number
-}, {
-  timestamps: true
-});
 
 const plantSchema = new mongoose.Schema({
   name: String,
   species: String,
   datePlanted: Date,
   wateringSchedule: Number,
-  watered: false,
-  wateredTracker: [wateredSchema],
+  wateredDate: Number,
   soilShouldBe: String,
   sunlightRequired: String,
   careTips: String,
@@ -32,20 +25,21 @@ plantSchema.methods.formattedDatePlanted = function(page) {
 };
 
 plantSchema.methods.lastWatered = function() {
-  if (this.watered) {
-    const wateredOn  = new Date();
-    this.wateredTracker.lastWatered = wateredOn.getTime();
-    this.watered = false;
-  }
+  const wateredOn  = new Date();
+  console.log(this);
+  this.wateredDate = wateredOn.getTime();
+  console.log(this.wateredDate);
+  console.log(this.wateredDate);
+  this.save();
+  console.log(this);
 };
 
 plantSchema.methods.daysUntilWatering = function() {
   const today = new Date();
-  console.log(this.wateredTracker.lastWatered);
+  console.log(this.wateredDate);
   console.log(today.getTime());
-  console.log(this.watered);
-  const daysUntilWater = today.getTime() - this.wateredTracker.lastWatered;
-  console.log(daysUntilWater);
+  // console.log(this.watered);
+  // console.log(daysUntilWater);
 };
 
 
