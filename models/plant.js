@@ -14,6 +14,7 @@ const plantSchema = new mongoose.Schema({
   sunlightRequired: String,
   careTips: String,
   image: String,
+  watered: false,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   comments: [commentSchema]
 });

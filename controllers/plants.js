@@ -67,6 +67,17 @@ function updateRoute(req, res) {
     .then(() => res.redirect(`/plants/${req.params.id}`));
 }
 
+function wateredRoute(req, res) {
+  Plant
+    .findById(req.params.id)
+    .exec()
+    .then((plant) => {
+      Object.assign(plant.req.body);
+      return plant.save();
+    })
+    .then(() => res.redirect('/plants/index'));
+}
+
 function deleteRoute(req, res) {
   Plant
     .findById(req.params.id)
@@ -110,6 +121,7 @@ module.exports = {
   edit: editRoute,
   update: updateRoute,
   delete: deleteRoute,
+  watered: wateredRoute,
   commentCreate: createCommentRoute,
   commentDelete: commentDeleteRoute
 };
