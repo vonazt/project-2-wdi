@@ -24,9 +24,13 @@
 }
 
 .show-plant-heading {
+  margin-left: 1em;
+  margin-bottom: .3em;
   font-size: 2em;
   color: $main-green;
   font-family: $main-font;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (max-width: 433px) {

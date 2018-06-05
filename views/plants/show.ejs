@@ -3,17 +3,19 @@
     <div class="columns">
       <div class="column is-half-desktop">
         <h2 class="show-plant-heading"><%= plant.name %></h2>
-        <img class src="<%= plant.image %>" alt="<%= plant.species %>">
+        <img class="show-plant" src="<%= plant.image %>" alt="<%= plant.species %>">
       </div>
       <div class="column is-quarter-desktop">
-        <ul>
-          <li class="plant-details show"><strong>Species:</strong> <%= plant.species %></li>
-          <li class="plant-details show"><strong>Planted on:</strong> <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></li>
-          <li class="plant-details show"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</li>
-          <li class="plant-details show"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
-          <li class="plant-details show"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
-          <p class="plant-details"><strong>Needs watering in</strong>  <%= plant.waterIn %> days</p>
-          <li>Comments</li>
+        <ul class="show-list">
+          <li class="show-details"><strong>Species:</strong> <%= plant.species %></li>
+          <li class="show-details"><strong>Planted on:</strong> <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></li>
+          <li class="show-details"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</li>
+          <li class="show-details"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
+          <li class="show-details"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
+          <li class="show-details"><strong>Water in</strong><%= plant.daysUntilWatering() %></li>
+          <li class="show-details"><strong>Care tips: </strong><%= plant.careTips %></li>
+
+          <li class="show-details">Comments</li>
           <% plant.comments.forEach(comment => { %>
           <li>
             <p><%= comment.content %></p>

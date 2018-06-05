@@ -19,9 +19,13 @@
   margin-bottom: .5em; }
 
 .show-plant-heading {
+  margin-left: 1em;
+  margin-bottom: .3em;
   font-size: 2em;
   color: #228b22;
-  font-family: "Poppins", sans-serif; }
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 @media (max-width: 433px) {
   .plant-heading {
@@ -41,6 +45,26 @@
   .navbar-menu .navbar-item:hover {
     color: #228b22; }
 
+.show-details {
+  line-height: 1.2em; }
+  .show-details strong {
+    font-weight: 700; }
+
+.show-list {
+  margin-top: 1.7em; }
+
+@media only screen and (max-width: 768px) {
+  .show-list {
+    margin-top: 0; } }
+.card {
+  border: 3px solid #228b22;
+  border-radius: 5%; }
+
+.plant-card-image {
+  border: 1px solid #228b22;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%; }
+
 .plant-name {
   color: #228b22;
   padding-bottom: .5em; }
@@ -56,9 +80,6 @@
     border-radius: 8px;
     background: linear-gradient(to left top, white, #228b22);
     line-height: 1em; }
-
-.show {
-  line-height: 1em; }
 
 .submit-button {
   background-color: #228b22;
@@ -88,5 +109,9 @@ body {
 
 .columns {
   margin: 0 auto; }
+
+.show-plant {
+  border: 10px solid #228b22;
+  border-radius: 10%; }
 
 /*# sourceMappingURL=main.css.map */
