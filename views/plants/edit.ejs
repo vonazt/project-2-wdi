@@ -2,7 +2,6 @@
   <div class="container">
     <h2 class="plant-heading">Edit <%= plant.name%>'s details</h2>
     <form enctype="multipart/form-data" action="/plants/<%= plant.id %>" method="POST">
-      <input type="hidden" name="_method" value="PUT">
       <div class="field">
         <label class="label">Plant name</label>
         <div class="control">

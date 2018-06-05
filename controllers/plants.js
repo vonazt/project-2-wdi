@@ -40,7 +40,6 @@ function newRoute(req, res) {
 
 function createRoute(req, res) {
   const plantData = req.body;
-  console.log(req.file);
   plantData['image'] = req.file.location;
   plantData['fileMetadata'] = req.file;
   plantData['creator'] = res.locals.currentUser.id;
@@ -66,6 +65,9 @@ function updateRoute(req, res) {
     .findById(req.params.id)
     .exec()
     .then((plant) => {
+      if(req.file) {
+        req.body['image'] = req.file.location;
+      }
       Object.assign(plant, req.body);
       return plant.save();
     })
@@ -80,16 +82,6 @@ function wateredRoute(req, res) {
       plant.lastWatered();
     })
     .then(() => res.redirect(`/plants/${req.params.id}`));
-}
-
-function userPlantsRoute(req, res) {
-  Plant
-    .find()
-    .populate('creator')
-    .exec()
-    .then(plants => {
-      res.render('plants/other-user', {plants});
-    });
 }
 
 function deleteRoute(req, res) {
@@ -136,7 +128,6 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   watered: wateredRoute,
-  userPlants: userPlantsRoute,
   commentCreate: createCommentRoute,
   commentDelete: commentDeleteRoute
 };

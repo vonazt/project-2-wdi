@@ -45,14 +45,14 @@ router.route('/register')
 
 router.route('/plants')
   .get(secureRoute, plants.index)
-  .post(upload.single('file'), plants.create);
+  .post(secureRoute, upload.single('file'), plants.create);
 router.route('/plants/all')
   .get(secureRoute, plants.all);
 router.route('/plants/new')
   .get(secureRoute, plants.new);
 router.route('/plants/:id')
   .get(secureRoute, plants.show)
-  .put(secureRoute, plants.update)
+  .post(secureRoute, upload.single('file'), plants.update)
   .delete(secureRoute, plants.delete);
 router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);

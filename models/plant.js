@@ -36,6 +36,7 @@ plantSchema.methods.daysUntilWatering = function() {
   const today = new Date();
   const todayInDays = today.getTime() / (60*60*24*1000);
   const daysSinceWatering = this.wateredDate / (60*60*24*1000);
+  console.log((daysSinceWatering + this.wateringSchedule) - todayInDays);
   let daysLeft = Math.ceil((daysSinceWatering + this.wateringSchedule) - todayInDays);
   if (daysLeft < 0) daysLeft = 0;
   this.waterIn = daysLeft;
@@ -47,9 +48,5 @@ plantSchema.methods.daysUntilWatering = function() {
     return ` ${daysLeft} days`;
   }
 };
-
-
-
-
 
 module.exports = mongoose.model('Plant', plantSchema);
