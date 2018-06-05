@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <div class="columns">
+    <div class="columns is-multiline">
       <div class="column is-half-desktop">
         <h2 class="show-plant-heading"><%= plant.name %></h2>
         <img class="show-plant" src="<%= plant.image %>" alt="<%= plant.species %>">
@@ -21,21 +21,11 @@
               <input type="hidden" name="_method" value="DELETE">
               <button name="button" class="card-footer-item" id="delete-button">Delete</button>
             </form>
-          <% } %>
-          <li class="comments">Comments</li>
-          <% plant.comments.forEach(comment => { %>
-          <li>
-            <p><%= comment.content %></p>
-            <p>Submitted by: <%= comment.commenter.username %></p>
-            <form action="/plants/<%= plant.id %>/comments/<%= comment.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <button name="button">Delete</button>
-            </form>
-          </li>
-          <% }) %>
         </ul>
-        <form action="/plants/<%= plant.id %>/comments" method="POST">
-          <article class="media">
+          <% } %>
+          <div class="comments-box">Comments:</div>
+          <% plant.comments.forEach(comment => { %>
+            <article class="media">
             <% if (user.profilePic ) { %>
               <figure class="media-left">
                 <p class="image is-64x64">
@@ -43,6 +33,27 @@
                 </p>
               </figure>
             <% } %>
+              <div class="media-content">
+                <div class="content">
+                  <p class="comments">
+                    <strong><%= comment.commenter.username %>:</strong>
+                    <br>
+                    <%= comment.content %>
+                    <br>
+                  </p>
+                </div>
+              </div>
+              <% if (locals.user.username === comment.commenter.username) { %>
+                <form class="delete-comment-form" action="/plants/<%= plant.id %>/comments/<%= comment.id %>" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button class="delete-comment" name="button">Delete comment</button>
+                </form>
+                <% } %>
+            </article>
+          <% }) %>
+
+        <form class="comments-form" action="/plants/<%= plant.id %>/comments" method="POST">
+          <article class="media">
             <div class="media-content">
               <div class="field">
                 <p class="control">
@@ -59,7 +70,6 @@
             </div>
           </article>
         </form>
-
       </div>
     </div>
   </div>
