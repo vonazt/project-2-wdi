@@ -6,6 +6,7 @@ const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const user = require('../controllers/users');
+const gallery = require('../controllers/galleries');
 
 const upload = require('../lib/s3-upload');
 
@@ -67,6 +68,9 @@ router.route('/plants/:id/comments/:commentId')
 
 router.route('/user/:id')
   .get(secureRoute, user.show);
+
+router.route('gallery/:id')
+  .get(secureRoute, gallery.show);
 
 
 module.exports = router;
