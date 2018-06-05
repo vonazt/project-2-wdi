@@ -81,6 +81,16 @@ function wateredRoute(req, res) {
     .then(() => res.redirect(`/plants/${req.params.id}`));
 }
 
+function userPlantsRoute(req, res) {
+  Plant
+    .find()
+    .populate('creator')
+    .exec()
+    .then(plants => {
+      res.render('plants/other-user', {plants});
+    });
+}
+
 function deleteRoute(req, res) {
   Plant
     .findById(req.params.id)
@@ -125,6 +135,7 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   watered: wateredRoute,
+  userPlants: userPlantsRoute,
   commentCreate: createCommentRoute,
   commentDelete: commentDeleteRoute
 };

@@ -113,6 +113,12 @@ a {
     background: linear-gradient(to left top, white, #228b22);
     line-height: 1em; }
 
+#username {
+  padding: 0;
+  border: none;
+  background: none;
+  color: green; }
+
 .submit-button {
   background-color: #228b22;
   color: white; }

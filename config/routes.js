@@ -5,6 +5,7 @@ const statics = require('../controllers/statics');
 const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
+const user = require('../controllers/users');
 
 const upload = require('../lib/s3-upload');
 
@@ -34,7 +35,7 @@ router.route('/register')
 
 router.route('/plants')
   .get(secureRoute, plants.index)
-  .post(upload.single('image'), plants.create);
+  .post(upload.single('file'), plants.create);
 router.route('/plants/all')
   .get(secureRoute, plants.all);
 router.route('/plants/new')
@@ -49,11 +50,13 @@ router.route('/plants/:id/watered/')
   .get(secureRoute, plants.watered);
 
 
-
 router.route('/plants/:id/comments')
   .post(secureRoute, plants.commentCreate);
 router.route('/plants/:id/comments/:commentId')
   .delete(secureRoute, plants.commentDelete);
+
+router.route('/user/:id')
+  .get(secureRoute, user.show);
 
 
 module.exports = router;
