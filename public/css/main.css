@@ -41,11 +41,6 @@
   .navbar-menu .navbar-item:hover {
     color: #228b22; }
 
-.plant-card {
-  font-family: "Poppins", sans-serif;
-  max-height: 300px;
-  max-width: 300px; }
-
 .plant-name {
   color: #228b22;
   padding-bottom: .5em; }

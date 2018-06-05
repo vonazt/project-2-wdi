@@ -4,20 +4,19 @@
     <div class="columns is-multiline">
       <% locals.user.plants.forEach( plant => { %>
       <div class="column is-one-third-desktop is-half-tablet">
-          <a href="plants/<%= plant.id %>">
+        <a href="plants/<%= plant.id %>">
           <div class="card">
             <div class="card-image">
               <figure class="image is-square">
                 <img src="<%= plant.image %>" alt="<%= plant.name %>">
               </figure>
             </div>
-            <div class="plant-card">
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
                   <ul>
                     <li class="plant-name title is-4"><%= plant.name %></li>
-          </a>
+        </a>
                     <li class="subtitle is-6 plant-details"><strong>Species:</strong> <%= plant.species %></li>
                     <li class="subtitle is-6 plant-details"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></li>
                     <li class="subtitle is-6 plant-details" ><strong>Water in</strong><%= plant.daysUntilWatering() %></li>
@@ -28,15 +27,14 @@
                 </div>
               </div>
             </div>
-            <footer class="card-footer">
-              <a href="plants/<%= plant.id %>" class="card-footer-item">View</a>
-              <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
-              <form class="card-footer-item" action="/plants/<%= plant.id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <button name="button" class="card-footer-item" id="delete-button">Delete</button>
-              </form>
-            </footer>
-          </div>
+          <footer class="card-footer">
+            <a href="plants/<%= plant.id %>" class="card-footer-item">View</a>
+            <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
+            <form class="card-footer-item" action="/plants/<%= plant.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <button name="button" id="delete-button">Delete</button>
+            </form>
+          </footer>
         </div>
       </div>
       <% }) %>

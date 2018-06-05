@@ -26,8 +26,9 @@
                 </div>
               </div>
             </div>
-            <% if (locals.user.id === plant.creator.id) { %>
               <footer class="card-footer">
+                <a href="/plants/<%= plant.id %>" class="card-footer-item">View</a>
+                <% if (locals.user.id === plant.creator.id) { %>
                 <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
                 <form class="card-footer-item" action="/plants/<%= plant.id %>" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
