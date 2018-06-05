@@ -40,9 +40,9 @@ function newRoute(req, res) {
 
 function createRoute(req, res) {
   const plantData = req.body;
-  plantData['image'] = req.file.location;
-  plantData['fileMetadata'] = req.file;
-  plantData['creator'] = res.locals.user.id;
+  // plantData['image'] = req.file.location;
+  // plantData['fileMetadata'] = req.file;
+  plantData['creator'] = res.locals.currentUser.id;
   Plant
     .create(req.body)
     .then(plant => {
@@ -102,7 +102,7 @@ function deleteRoute(req, res) {
 
 function createCommentRoute(req, res, next) {
   const commenter = req.body;
-  commenter['commenter'] = res.locals.user.id;
+  commenter['commenter'] = res.locals.currentUser.id;
   Plant
     .findById(req.params.id)
     .then(plant => {

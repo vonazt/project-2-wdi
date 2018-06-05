@@ -1,8 +1,8 @@
 <section class="section">
   <div class="container">
-    <h1 class="plant-heading"><%= locals.user.username %>'s plants</h1>
+    <h1 class="plant-heading"><%= locals.currentUser.username %>'s plants</h1>
     <div class="columns is-multiline">
-      <% locals.user.plants.forEach( plant => { %>
+      <% locals.currentUser.plants.forEach( plant => { %>
       <div class="column is-one-third-desktop is-half-tablet">
         <a href="plants/<%= plant.id %>">
           <div class="card">
