@@ -19,7 +19,7 @@
         </a>
                     <li class="subtitle is-6 plant-details"><strong>Species:</strong> <%= plant.species %></li>
                     <li class="subtitle is-6 plant-details"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></li>
-                    <li class="subtitle is-6 plant-details" ><strong>Water in</strong><%= plant.daysUntilWatering() %></li>
+                    <li class="subtitle is-6 plant-details" ><strong>Water</strong><%= plant.daysUntilWatering() %></li>
                     <li class="subtitle is-6 plant-details"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
                     <li class="subtitle is-6 plant-details"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
                     <li class="subtitle is-6 plant-details"> <a href="/plants/<%= plant.id %>/watered">Watered</a></li>

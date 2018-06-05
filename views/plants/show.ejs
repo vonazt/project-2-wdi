@@ -12,7 +12,7 @@
           <li class="show-details"><strong>Water every</strong>  <%= plant.wateringSchedule %> days</li>
           <li class="show-details"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
           <li class="show-details"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
-          <li class="show-details"><strong>Water in</strong><%= plant.daysUntilWatering() %></li>
+          <li class="show-details"><strong>Water </strong><%= plant.daysUntilWatering() %></li>
           <li class="show-details"><strong>Care tips: </strong><%= plant.careTips %></li>
           <% if (locals.currentUser.id === plant.creator.id) { %>
             <li class="show-details"> <a href="/plants/<%= plant.id %>/watered">Watered</a></li>

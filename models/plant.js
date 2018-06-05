@@ -43,9 +43,9 @@ plantSchema.methods.daysUntilWatering = function() {
   if (daysLeft === 0) {
     return ' today!';
   } else if (daysLeft === 1) {
-    return ' 1 day';
+    return ' in 1 day';
   } else {
-    return ` ${daysLeft} days`;
+    return ` in ${daysLeft} days`;
   }
 };
 

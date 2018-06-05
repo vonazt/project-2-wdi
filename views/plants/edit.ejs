@@ -72,19 +72,27 @@
         </div>
       </div>
 
-      <div class="file has-name is-full-width">
+
+
+      <div class="file has-name is-full-width plant-icon">
+        <figure class="media-left">
+          <p class="image is-128x128">
+            Current picture:
+            <img src="<%= plant.image %>">
+          </p>
+        </figure>
          <label class="file-label">
-           <input class="file-input" type="file" name="file">
+           <input class="file-input" type="file" name="file" accept=".jpg, .jpeg, .png">
            <span class="file-cta">
              <span class="file-icon">
                <i class="fas fa-upload"></i>
              </span>
              <span class="file-label">
-               Upload a picture
+               Upload a new picture (500px x 500px)
              </span>
            </span>
          </label>
-       </div>
+      </div>
 
     <div class="field is-grouped">
       <div class="control">
