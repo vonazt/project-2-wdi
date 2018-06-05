@@ -11,7 +11,18 @@
 
 .plant-details {
   line-height: 0;
+  margin: 0;
+  padding: 0;
+  a {
+      color: black;
+      border: 2px solid grey;
+      padding: 0 25px;
+      border-radius: 8px;
+      background: linear-gradient(to left top, rgba(255,255,255,1), $main-green);
+      line-height: 1em;
+  }
 }
+
 
 .show {
   line-height: 1em;

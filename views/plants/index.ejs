@@ -15,26 +15,21 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <p class="plant-name title is-4"><%= plant.name %></p>
+                  <ul>
+                    <li class="plant-name title is-4"><%= plant.name %></li>
           </a>
-                  <p class="plant-details subtitle is-6"><strong>Species:</strong> <%= plant.species %></p>
-                  <p class="plant-details subtitle is-6"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></p>
-                  <% if (plant.daysUntilWatering() === 0) { %>
-                    <p class="plant-details subtitle is-6"><strong>Water today!</p>
-                  <%} else if (plant.daysUntilWatering() === 1) { %>
-                    <p class="plant-details subtitle is-6"><strong>Water in</strong>  <%= plant.daysUntilWatering() %> day</p>
-                  <% } else { %>
-                    <p class="plant-details subtitle is-6"><strong>Water in</strong>  <%= plant.daysUntilWatering() %> days</p>
-                  <% } %>
-                  <a href="/plants/<%= plant.id %>/watered">Watered</a>
-                  <br/>
-                  <br/>
-                  <p class="plant-details subtitle is-6"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></p>
-                  <p class="plant-details subtitle is-6"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></p>
+                    <li class="subtitle is-6 plant-details"><strong>Species:</strong> <%= plant.species %></li>
+                    <li class="subtitle is-6 plant-details"><strong>Planted on:</strong> <%= plant.formattedDatePlanted('index') %></li>
+                    <li class="subtitle is-6 plant-details" ><strong>Water in</strong><%= plant.daysUntilWatering() %></li>
+                    <li class="subtitle is-6 plant-details"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
+                    <li class="subtitle is-6 plant-details"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
+                    <li class="subtitle is-6 plant-details"> <a href="/plants/<%= plant.id %>/watered">Watered</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
             <footer class="card-footer">
+              <a href="plants/<%= plant.id %>" class="card-footer-item">View</a>
               <a href="/plants/<%= plant.id %>/edit" class="card-footer-item">Edit</a>
               <form class="card-footer-item" action="/plants/<%= plant.id %>" method="POST">
                 <input type="hidden" name="_method" value="DELETE">

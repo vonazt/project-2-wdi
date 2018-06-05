@@ -51,7 +51,16 @@
   padding-bottom: .5em; }
 
 .plant-details {
-  line-height: 0; }
+  line-height: 0;
+  margin: 0;
+  padding: 0; }
+  .plant-details a {
+    color: black;
+    border: 2px solid grey;
+    padding: 0 25px;
+    border-radius: 8px;
+    background: linear-gradient(to left top, white, #228b22);
+    line-height: 1em; }
 
 .show {
   line-height: 1em; }
