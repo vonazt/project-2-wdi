@@ -14,7 +14,7 @@
           <li class="show-details"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
           <li class="show-details"><strong>Water in</strong><%= plant.daysUntilWatering() %></li>
           <li class="show-details"><strong>Care tips: </strong><%= plant.careTips %></li>
-          <% if (locals.user.id === plant.creator.id) { %>
+          <% if (locals.currentUser.id === plant.creator.id) { %>
             <li class="show-details"> <a href="/plants/<%= plant.id %>/watered">Watered</a></li>
             <a href="/plants/<%= plant.id %>/edit" class="show-details">Edit</a>
             <form class="show-details" action="/plants/<%= plant.id %>" method="POST">
@@ -26,7 +26,7 @@
           <div class="comments-box">Comments:</div>
           <% plant.comments.forEach(comment => { %>
             <article class="media">
-            <% if (user.profilePic ) { %>
+            <% if (currentUser.profilePic ) { %>
               <figure class="media-left">
                 <p class="image is-64x64">
                   <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -43,7 +43,7 @@
                   </p>
                 </div>
               </div>
-              <% if (locals.user.username === comment.commenter.username) { %>
+              <% if (locals.currentUser.username === comment.commenter.username || locals.currentUser.id === plant.creator.id) { %>
                 <form class="delete-comment-form" action="/plants/<%= plant.id %>/comments/<%= comment.id %>" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
                   <button class="delete-comment" name="button">Delete comment</button>

@@ -1,7 +1,7 @@
 <section class="section">
   <div class="container">
     <h2 class="plant-heading">Edit <%= plant.name%>'s details</h2>
-    <form action="/plants/<%= plant.id %>" method="POST">
+    <form enctype="multipart/form-data" action="/plants/<%= plant.id %>" method="POST">
       <input type="hidden" name="_method" value="PUT">
       <div class="field">
         <label class="label">Plant name</label>
@@ -73,26 +73,19 @@
         </div>
       </div>
 
-      <div class="field">
-        <label class="label">Picture of plant</label>
-        <div class="control">
-          <input class="url" type="text" name="image" value="<%= plant.image %>">
-        </div>
-      </div>
-
-      <%# <div class="file has-name is-full-width">
-      <label class="file-label">
-      <input class="file-input" type="file" name="image">
-      <span class="file-cta">
-      <span class="file-icon">
-      <i class="fas fa-upload"></i>
-    </span>
-    <span class="file-label" id="filename">
-    Upload a picture
-  </span>
-</span>
-</label>
-</div> %>
+      <div class="file has-name is-full-width">
+         <label class="file-label">
+           <input class="file-input" type="file" name="file">
+           <span class="file-cta">
+             <span class="file-icon">
+               <i class="fas fa-upload"></i>
+             </span>
+             <span class="file-label">
+               Upload a picture
+             </span>
+           </span>
+         </label>
+       </div>
 
     <div class="field is-grouped">
       <div class="control">

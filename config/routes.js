@@ -18,6 +18,16 @@ function secureRoute(req, res, next) {
   }
   return next();
 }
+//
+// function checkUserRoute(req, res, next) {
+//   if(req.session.id !== user.id || req.session.id !== user.creator.id) {
+//     return req.session.regenerate(() => {
+//       req.flash('danger', 'You must be logged in to view this page');
+//       res.redirect('/login');
+//     });
+//   }
+//   return next();
+// }
 
 router.route('/')
   .get(statics.index);
