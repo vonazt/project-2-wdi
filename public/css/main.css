@@ -84,7 +84,8 @@ a {
     margin-top: 0; } }
 .card {
   border: 3px solid #228b22;
-  border-radius: 5%; }
+  border-radius: 5%;
+  background-clip: padding-box; }
 
 .plant-card-image {
   border: 1px solid #228b22;
@@ -152,7 +153,10 @@ body {
   border: 10px solid #228b22;
   border-radius: 10%; }
 
+p strong {
+  font-weight: 700; }
+
 .plant-icon {
-  margin-bottom: 1.5em; }
+  margin-bottom: .5em; }
 
 /*# sourceMappingURL=main.css.map */
