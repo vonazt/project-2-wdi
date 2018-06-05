@@ -50,8 +50,17 @@
   .show-details strong {
     font-weight: 700; }
 
+a {
+  color: #228b22; }
+
 .show-list {
-  margin-top: 1.7em; }
+  margin-top: 2.5em; }
+
+.comments {
+  font-size: 1.5em;
+  margin-top: 1em;
+  color: #228b22;
+  font-weight: 700; }
 
 @media only screen and (max-width: 768px) {
   .show-list {
@@ -68,6 +77,12 @@
 .plant-name {
   color: #228b22;
   padding-bottom: .5em; }
+
+.card-footer-item {
+  color: #228b22;
+  border-top: 1px solid #228b22; }
+  .card-footer-item:not(:last-child) {
+    border-right: 1px solid #228b22; }
 
 .plant-details {
   line-height: 0;
@@ -92,7 +107,7 @@
 
 #delete-button {
   border: none;
-  color: #3273dc;
+  color: #228b22;
   background-color: white;
   font-size: 1em;
   margin-bottom: .1em;
