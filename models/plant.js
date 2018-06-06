@@ -5,7 +5,6 @@ const commentSchema = new mongoose.Schema({
   commenter: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
-
 const plantSchema = new mongoose.Schema({
   name: String,
   species: String,
@@ -20,6 +19,12 @@ const plantSchema = new mongoose.Schema({
   fileMetadata: Object,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   comments: [commentSchema]
+});
+
+plantSchema.virtual('gallery', {
+  ref: 'Plant',
+  foreignField: 'plant',
+  localField: '_id'
 });
 
 plantSchema.methods.formattedDatePlanted = function(page) {

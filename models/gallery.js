@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
-const gallerySchema = new mongoose.Schema({
+const plantPicturesSchema = new mongoose.Schema({
   name: String,
-  images: []
+  images: Array,
+  fileMetadata: Object,
+  plant: { type: mongoose.Schema.Types.ObjectId, ref: 'Plant' }
 });
 
-module.exports = mongoose.model('Gallery', gallerySchema);
+
+module.exports = mongoose.model('Gallery', plantPicturesSchema);

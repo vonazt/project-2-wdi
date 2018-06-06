@@ -19,16 +19,6 @@ function secureRoute(req, res, next) {
   }
   return next();
 }
-//
-// function checkUserRoute(req, res, next) {
-//   if(req.session.id !== user.id || req.session.id !== user.creator.id) {
-//     return req.session.regenerate(() => {
-//       req.flash('danger', 'You must be logged in to view this page');
-//       res.redirect('/login');
-//     });
-//   }
-//   return next();
-// }
 
 router.route('/')
   .get(statics.index);
@@ -69,8 +59,12 @@ router.route('/plants/:id/comments/:commentId')
 router.route('/user/:id')
   .get(secureRoute, user.show);
 
-router.route('gallery/:id')
+router.route('/gallery')
   .get(secureRoute, gallery.show);
+router.route('/gallery/:id')
+  .get(secureRoute, gallery.show)
+  .post(secureRoute, upload.single('file'), gallery.create);
+
 
 
 module.exports = router;
