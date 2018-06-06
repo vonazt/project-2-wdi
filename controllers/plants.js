@@ -56,11 +56,7 @@ function editRoute(req, res) {
     .findById(req.params.id)
     .exec()
     .then(plant => {
-      if (req.params.id === res.locals.currentUser.id) {
-        res.render('plants/edit', {plant});
-      } else {
-        res.render('plants/index');
-      }
+      res.render('plants/edit', {plant});
     });
 }
 
@@ -92,14 +88,19 @@ function deleteRoute(req, res) {
   Plant
     .findById(req.params.id)
     .then(plant => {
-      if (req.params.id === res.locals.currentUser.id) {
-        plant.remove();
-        return res.redirect('/plants');
-      } else {
-        res.render('plants/index');
-      }
+      plant.remove();
+      return res.redirect('/plants');
     });
 }
+//
+// function galleryIndexRoute(req, res) {
+//   Plant
+//     .findById(req.params.id)
+//     .exec()
+//     .then((plant) => {
+//       res.render('plants/gallery', {plant});
+//     });
+// }
 
 function createCommentRoute(req, res, next) {
   const commenter = req.body;

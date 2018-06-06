@@ -1,11 +1,11 @@
 <section class="section">
   <div class="container">
     <h1 class="plant-heading">SHOW ME</h1>
-      <% gallery.forEach( picture => { %>
-        <img src="<%= picture.image %>" alt="<%= picture.name %>">
+      <% plant.gallery.forEach( picture => { %>
+        <img src="<%= picture.image %>" alt="<%= picture.title %>">
       <% }) %>
 
-    <form enctype="multipart/form-data" action="/gallery/<%= plant.id %>" method="POST">
+    <form enctype="multipart/form-data" action="/plants/<%= plant.id %>/gallery" method="POST">
       <div class="file has-name is-full-width">
          <label class="file-label">
            <input class="file-input" type="file" name="file" accept=".jpg, .jpeg, .png">

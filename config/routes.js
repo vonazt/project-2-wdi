@@ -6,7 +6,7 @@ const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const user = require('../controllers/users');
-const gallery = require('../controllers/galleries');
+// const gallery = require('../controllers/galleries');
 
 const upload = require('../lib/s3-upload');
 
@@ -49,6 +49,9 @@ router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);
 router.route('/plants/:id/watered/')
   .get(secureRoute, plants.watered);
+// router.route('/plants/:id/gallery')
+//   .get(secureRoute, plants.galleryIndex)
+//   .post(secureRoute, upload.single('file'), plants.updateGallery);
 
 
 router.route('/plants/:id/comments')
@@ -59,11 +62,11 @@ router.route('/plants/:id/comments/:commentId')
 router.route('/user/:id')
   .get(secureRoute, user.show);
 
-router.route('/gallery')
-  .get(secureRoute, gallery.show);
-router.route('/gallery/:id')
-  .get(secureRoute, gallery.show)
-  .post(secureRoute, upload.single('file'), gallery.create);
+// router.route('/gallery')
+//   .get(secureRoute, gallery.show);
+// router.route('/gallery/:id')
+//   .get(secureRoute, gallery.show)
+//   .post(secureRoute, upload.single('file'), gallery.create);
 
 
 

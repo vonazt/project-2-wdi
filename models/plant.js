@@ -4,6 +4,10 @@ const commentSchema = new mongoose.Schema({
   content: { type: String, required: true },
   commenter: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
+// 
+// const gallerySchema = new mongoose.Schema({
+//   image: String
+// });
 
 const plantSchema = new mongoose.Schema({
   name: String,
@@ -16,16 +20,12 @@ const plantSchema = new mongoose.Schema({
   sunlightRequired: String,
   careTips: String,
   image: String,
+  // gallery: [gallerySchema],
   fileMetadata: Object,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   comments: [commentSchema]
 });
 
-plantSchema.virtual('gallery', {
-  ref: 'Plant',
-  foreignField: 'plant',
-  localField: '_id'
-});
 
 plantSchema.methods.formattedDatePlanted = function(page) {
   return page === 'edit' ? this.datePlanted.toISOString().slice(0,10) : this.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});

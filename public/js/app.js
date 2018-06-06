@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  wateringListener();
 
   // Get all "navbar-burger" elements
   var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('filename').innerHTML = file.files[0].name;
     }
   };
+  wateringListener();
 
 });
 
