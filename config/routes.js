@@ -51,6 +51,10 @@ router.route('/plants/:id/watered/')
 router.route('/plants/:id/gallery')
   .get(secureRoute, plants.galleryIndex)
   .post(secureRoute, upload.single('file'), plants.galleryUpdate);
+router.route('/plants/:id/picture/:picture_id')
+  .delete(secureRoute, plants.galleryImageDelete);
+
+
 
 router.route('/plants/:id/comments')
   .post(secureRoute, plants.commentCreate);

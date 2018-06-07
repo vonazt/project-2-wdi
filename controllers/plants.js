@@ -116,6 +116,19 @@ function galleryUpdateRoute(req, res) {
     .then(plant => res.redirect(`/plants/${plant.id}/gallery`));
 }
 
+
+function galleryImageDeleteRoute(req, res, next) {
+  Plant
+    .findById(req.params.id)
+    .then(plant => {
+      const plantImage = plant.gallery.id(req.params.picture_id);
+      plantImage.remove();
+      return plant.save();
+    })
+    .then(plant => res.redirect(`/plants/${plant.id}/gallery`))
+    .catch(next);
+}
+
 function createCommentRoute(req, res, next) {
   const commenter = req.body;
   commenter['commenter'] = res.locals.currentUser.id;
@@ -153,6 +166,7 @@ module.exports = {
   watered: wateredRoute,
   galleryIndex: galleryIndexRoute,
   galleryUpdate: galleryUpdateRoute,
+  galleryImageDelete: galleryImageDeleteRoute,
   commentCreate: createCommentRoute,
   commentDelete: commentDeleteRoute
 };
