@@ -1,32 +1,43 @@
 <section class="section">
   <div class="container">
-    <h1 class="plant-heading">SHOW ME</h1>
-      <% plant.gallery.forEach( picture => { %>
-        <img src="<%= picture.image %>" alt="">
-      <% }) %>
+    <h1 class="plant-heading"><%= plant.name%>'s Gallery</h1>
+      <button class="add-gallery-picture" id="modal-button">Add picture</button>
+      <div class="columns is-multiline">
+        <% plant.gallery.forEach( picture => { %>
+          <div class="column is-one-quarter-dekstop is-one-third-tablet">
+            <figure class="image is-square">
+              <img class="gallery-image" src="<%= picture.image %>" alt="">
+            </figure>
+          </div>
+        <% }) %>
+      </div>
 
-    <form enctype="multipart/form-data" action="/plants/<%= plant.id %>/gallery" method="POST">
-      <div class="file has-name is-full-width">
-         <label class="file-label">
-           <input class="file-input" type="file" name="file" accept=".jpg, .jpeg, .png">
-           <span class="file-cta">
-             <span class="file-icon">
-               <i class="fas fa-upload"></i>
-             </span>
-             <span class="file-label">
-               Upload a picture (500px x 500px)
-             </span>
-           </span>
-         </label>
-       </div>
-       <div class="field is-grouped">
-         <div class="control">
-           <button class="button submit-button">Submit</button>
-         </div>
-      </form>
-       <div class="control">
-         <a class="button is-text" href="/plants/">Cancel</a>
-       </div>
+    <div class="modal">
+      <div class="modal-background"></div>
+        <div class="modal-content">
+          <form enctype="multipart/form-data" action="/plants/<%= plant.id %>/gallery" method="POST">
+            <div class="file has-name is-full-width plant-icon">
+               <label class="file-label">
+                 <input class="file-input" type="file" id="file" name="file" accept=".jpg, .jpeg, .png">
+                 <span class="file-cta">
+                   <span class="file-icon">
+                     <i class="fas fa-upload"></i>
+                   </span>
+                   <span class="file-label" >
+                     Upload a new picture (500px x 500px)
+                   </span>
+                 </span>
+                 <span class="file-name" id="filename"></span>
+               </label>
+            </div>
+             <div class="field is-grouped">
+               <div class="control">
+                 <button class="button submit-button">Submit</button>
+               </div>
+            </form>
+            </div>
+            <button class="modal-close is-large close-modal" aria-label="close"></button>
+        </div>
      </div>
   </div>
 </section>

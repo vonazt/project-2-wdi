@@ -6,7 +6,6 @@ const plants = require('../controllers/plants');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const user = require('../controllers/users');
-// const gallery = require('../controllers/galleries');
 
 const upload = require('../lib/s3-upload');
 

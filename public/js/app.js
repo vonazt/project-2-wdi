@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  const $galleryModal = $('#modal-button');
+  $galleryModal.on('click', function() {
+    $('.modal').addClass('is-active');
+  });
+
+  const $closeGalleryModal = $('.close-modal');
+  $closeGalleryModal.on('click', function() {
+    $('.modal').removeClass('is-active');
+  });
+
   const file = document.getElementById('file');
   file.onchange = function(){
     if(file.files.length > 0) {
