@@ -49,9 +49,9 @@ router.route('/plants/:id/edit')
   .get(secureRoute, plants.edit);
 router.route('/plants/:id/watered/')
   .get(secureRoute, plants.watered);
-// router.route('/plants/:id/gallery')
-//   .get(secureRoute, plants.galleryIndex)
-//   .post(secureRoute, upload.single('file'), plants.updateGallery);
+router.route('/plants/:id/gallery')
+  .get(secureRoute, plants.galleryIndex)
+  .post(secureRoute, upload.single('file'), plants.updateGallery);
 
 
 router.route('/plants/:id/comments')

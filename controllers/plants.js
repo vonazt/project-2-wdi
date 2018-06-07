@@ -56,7 +56,7 @@ function editRoute(req, res) {
     .findById(req.params.id)
     .exec()
     .then(plant => {
-      res.render('plants/edit', {plant});
+      return req.user.id === plant.creator.toString() ? res.render('plants/edit', {plant}) : res.render('plants/show', {plant});
     });
 }
 
