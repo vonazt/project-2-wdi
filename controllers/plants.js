@@ -1,6 +1,5 @@
 const Plant = require('../models/plant');
 
-
 function indexRoute(req, res) {
   Plant
     .find()
@@ -115,7 +114,6 @@ function galleryUpdateRoute(req, res) {
     })
     .then(plant => res.redirect(`/plants/${plant.id}/gallery`));
 }
-
 
 function galleryImageDeleteRoute(req, res, next) {
   Plant

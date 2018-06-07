@@ -8,6 +8,8 @@ const commentSchema = new mongoose.Schema({
 const gallerySchema = new mongoose.Schema({
   image: String,
   metadata: Object
+}, {
+  timestamps: true
 });
 
 const plantSchema = new mongoose.Schema({

@@ -8,6 +8,8 @@
             <figure class="image is-square">
               <img class="gallery-image" src="<%= picture.image %>" alt="">
             </figure>
+            <p> Picture added: <%= picture.createdAt.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %> at
+            <%= picture.createdAt.toLocaleTimeString() %>
             <form action="/plants/<%= plant.id %>/picture/<%= picture.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <button name="button">Delete picture</button>
