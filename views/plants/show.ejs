@@ -16,6 +16,7 @@
           <li class="show-details"><strong>Care tips: </strong><%= plant.careTips %></li>
           <% if (locals.currentUser.id === plant.creator.id) { %>
             <li class="show-details"> <a href="/plants/<%= plant.id %>/watered">Watered</a></li>
+            <li class="show-details"> <a href="/plants/<%= plant.id %>/gallery">GALLERY</a></li>
             <a href="/plants/<%= plant.id %>/edit" class="show-details">Edit</a>
             <form class="show-details" action="/plants/<%= plant.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">

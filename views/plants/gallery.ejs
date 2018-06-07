@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="plant-heading">SHOW ME</h1>
       <% plant.gallery.forEach( picture => { %>
-        <img src="<%= picture.image %>" alt="<%= picture.title %>">
+        <img src="<%= picture.image %>" alt="">
       <% }) %>
 
     <form enctype="multipart/form-data" action="/plants/<%= plant.id %>/gallery" method="POST">

@@ -51,8 +51,7 @@ router.route('/plants/:id/watered/')
   .get(secureRoute, plants.watered);
 router.route('/plants/:id/gallery')
   .get(secureRoute, plants.galleryIndex)
-  .post(secureRoute, upload.single('file'), plants.updateGallery);
-
+  .post(secureRoute, upload.single('file'), plants.galleryUpdate);
 
 router.route('/plants/:id/comments')
   .post(secureRoute, plants.commentCreate);
@@ -61,13 +60,5 @@ router.route('/plants/:id/comments/:commentId')
 
 router.route('/user/:id')
   .get(secureRoute, user.show);
-
-// router.route('/gallery')
-//   .get(secureRoute, gallery.show);
-// router.route('/gallery/:id')
-//   .get(secureRoute, gallery.show)
-//   .post(secureRoute, upload.single('file'), gallery.create);
-
-
 
 module.exports = router;

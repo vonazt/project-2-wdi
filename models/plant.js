@@ -4,10 +4,11 @@ const commentSchema = new mongoose.Schema({
   content: { type: String, required: true },
   commenter: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
-// 
-// const gallerySchema = new mongoose.Schema({
-//   image: String
-// });
+
+const gallerySchema = new mongoose.Schema({
+  image: String,
+  metadata: Object
+});
 
 const plantSchema = new mongoose.Schema({
   name: String,
@@ -20,7 +21,7 @@ const plantSchema = new mongoose.Schema({
   sunlightRequired: String,
   careTips: String,
   image: String,
-  // gallery: [gallerySchema],
+  gallery: [gallerySchema],
   fileMetadata: Object,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   comments: [commentSchema]

@@ -92,15 +92,29 @@ function deleteRoute(req, res) {
       return res.redirect('/plants');
     });
 }
-//
-// function galleryIndexRoute(req, res) {
-//   Plant
-//     .findById(req.params.id)
-//     .exec()
-//     .then((plant) => {
-//       res.render('plants/gallery', {plant});
-//     });
-// }
+
+function galleryIndexRoute(req, res) {
+  Plant
+    .findById(req.params.id)
+    .exec()
+    .then((plant) => {
+      res.render('plants/gallery', {plant});
+    });
+}
+
+function galleryUpdateRoute(req, res) {
+  const pictureData = req.body;
+  pictureData['image'] = req.file.location;
+  pictureData['fileMetadata'] = req.file;
+  Plant
+    .findById(req.params.id)
+    .exec()
+    .then(plant => {
+      plant.gallery.push(req.body);
+      return plant.save();
+    })
+    .then(plant => res.redirect(`/plants/${plant.id}/gallery`));
+}
 
 function createCommentRoute(req, res, next) {
   const commenter = req.body;
@@ -137,6 +151,8 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   watered: wateredRoute,
+  galleryIndex: galleryIndexRoute,
+  galleryUpdate: galleryUpdateRoute,
   commentCreate: createCommentRoute,
   commentDelete: commentDeleteRoute
 };
