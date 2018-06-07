@@ -14,13 +14,15 @@
           <li class="show-details"><strong>Water </strong><%= plant.daysUntilWatering() %></li>
           <li class="show-details"><strong>Soil should be:</strong> <%= plant.soilShouldBe %></li>
           <li class="show-details"><strong>Sunlight:</strong> <%= plant.sunlightRequired %></li>
-          <li class="show-details"><strong>Care tips: </strong><%= plant.careTips %></li>
+          <% if (plant.careTips) { %>
+            <li class="show-details"><strong>Care tips: </strong><%= plant.careTips %></li>
+          <% } %>
           <% if (locals.currentUser.id === plant.creator.id) { %>
-            <li class="show-details"> <a href="/plants/<%= plant.id %>/watered">Watered</a></li>
-            <a href="/plants/<%= plant.id %>/edit" class="show-details">Edit</a>
+            <li class="show-details"> <a href="/plants/<%= plant.id %>/watered"><strong>Plant watered</strong></a></li>
+            <a href="/plants/<%= plant.id %>/edit" class="show-details"><strong>Edit plant details</strong></a>
             <form class="show-details" action="/plants/<%= plant.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
-              <button name="button" class="card-footer-item" id="delete-button">Delete</button>
+              <button name="button" id="delete-button"><strong>Delete plant</strong></button>
             </form>
         </ul>
           <% } %>

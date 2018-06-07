@@ -13,12 +13,14 @@
 #delete-button {
   border: none;
   color: $main-green;
-  background-color: white;
+  border: none;
   font-size: 1em;
-  margin-bottom: .1em;
   cursor: pointer;
   padding: 0;
   &:hover {
     color: #363636;
+  }
+  strong {
+    color: $main-green;
   }
 }

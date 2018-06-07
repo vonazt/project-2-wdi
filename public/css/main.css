@@ -129,14 +129,18 @@ a {
   color: #228b22;
   padding: .5em; }
 
+.gallery-filename {
+  color: white; }
+
 .add-gallery-picture {
   font-family: "Poppins", sans-serif;
   color: #228b22;
   border: none;
-  text-decoration: underline;
   font-size: 2em;
   padding: 10px;
   cursor: pointer; }
+  .add-gallery-picture:hover {
+    text-decoration: underline; }
 
 .delete-gallery-picture {
   font-family: "Poppins", sans-serif;
@@ -157,13 +161,14 @@ a {
 #delete-button {
   border: none;
   color: #228b22;
-  background-color: white;
+  border: none;
   font-size: 1em;
-  margin-bottom: .1em;
   cursor: pointer;
   padding: 0; }
   #delete-button:hover {
     color: #363636; }
+  #delete-button strong {
+    color: #228b22; }
 
 body {
   font-family: "Poppins", sans-serif; }

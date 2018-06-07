@@ -15,7 +15,7 @@
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-end">
       <% if (locals.isLoggedIn) { %>
-        <p class="navbar-item">Welcome <%= locals.currentUser.username %></p>
+        <a class="navbar-item" href="/plants">Welcome <%= locals.currentUser.username %></p>
         <a class="navbar-item" href="/plants">My Plants</a>
         <a class="navbar-item" href="/plants/new">Add Plant</a>
         <a class="navbar-item" href="/plants/all">All Plants</a>

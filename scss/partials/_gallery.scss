@@ -3,16 +3,20 @@
   padding: .5em;
 }
 
-
+.gallery-filename {
+  color: white;
+}
 
 .add-gallery-picture {
   font-family: $main-font;
   color: $main-green;
   border: none;
-  text-decoration: underline;
   font-size: 2em;
   padding: 10px;
   cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .delete-gallery-picture {

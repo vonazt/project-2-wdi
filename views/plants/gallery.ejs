@@ -7,13 +7,19 @@
       <button class="add-gallery-picture" id="modal-button">Add a picture</button>
     <% } %>
       <div class="columns is-multiline">
+        <div class="column is-one-quarter-dekstop is-one-third-tablet">
+          <figure class="image is-square">
+            <img class="gallery-image" src="<%= plant.image %>" alt="">
+          </figure>
+          <p class="gallery-info"> <%= plant.name %>
+          </div>
         <% plant.gallery.forEach( picture => { %>
           <div class="column is-one-quarter-dekstop is-one-third-tablet">
             <figure class="image is-square">
               <img class="gallery-image" src="<%= picture.image %>" alt="">
             </figure>
             <p class="gallery-info"> Picture added: <%= picture.createdAt.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %> at
-            <%= picture.createdAt.toLocaleTimeString() %>
+            <%= picture.createdAt.toLocaleTimeString().slice(0, -3) %>
             <% if (locals.currentUser.id === plant.creator.toString()) { %>
               <form action="/plants/<%= plant.id %>/picture/<%= picture.id %>" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
@@ -39,7 +45,7 @@
                      Upload a new picture (500px x 500px)
                    </span>
                  </span>
-                 <span class="file-name" id="filename"></span>
+                 <span class="file-name gallery-filename" id="filename"></span>
                </label>
             </div>
              <div class="field is-grouped">
