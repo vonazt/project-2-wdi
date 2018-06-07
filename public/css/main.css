@@ -120,6 +120,26 @@ a {
   background: none;
   color: green; }
 
+.gallery-info {
+  color: #228b22;
+  padding: .5em; }
+
+.add-gallery-picture {
+  font-family: "Poppins", sans-serif;
+  color: #228b22;
+  border: none;
+  text-decoration: underline;
+  font-size: 2em;
+  padding: 10px;
+  cursor: pointer; }
+
+.delete-gallery-picture {
+  font-family: "Poppins", sans-serif;
+  color: #228b22;
+  border: none;
+  cursor: pointer;
+  align-items: flex-end; }
+
 .submit-button {
   background-color: #228b22;
   color: white; }
@@ -139,14 +159,6 @@ a {
   padding: 0; }
   #delete-button:hover {
     color: #363636; }
-
-.add-gallery-picture {
-  font-family: "Poppins", sans-serif;
-  color: #228b22;
-  border: none;
-  font-size: 2em;
-  padding: 10px;
-  cursor: pointer; }
 
 body {
   font-family: "Poppins", sans-serif; }

@@ -1,19 +1,24 @@
 <section class="section">
   <div class="container">
     <h1 class="plant-heading"><%= plant.name%>'s Gallery</h1>
+
+    <% if (locals.currentUser.id === plant.creator.toString()) { %>
       <button class="add-gallery-picture" id="modal-button">Add a picture</button>
+    <% } %>
       <div class="columns is-multiline">
         <% plant.gallery.forEach( picture => { %>
           <div class="column is-one-quarter-dekstop is-one-third-tablet">
             <figure class="image is-square">
               <img class="gallery-image" src="<%= picture.image %>" alt="">
             </figure>
-            <p> Picture added: <%= picture.createdAt.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %> at
+            <p class="gallery-info"> Picture added: <%= picture.createdAt.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %> at
             <%= picture.createdAt.toLocaleTimeString() %>
-            <form action="/plants/<%= plant.id %>/picture/<%= picture.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <button name="button">Delete picture</button>
-            </form>
+            <% if (locals.currentUser.id === plant.creator.toString()) { %>
+              <form action="/plants/<%= plant.id %>/picture/<%= picture.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="delete-gallery-picture" name="button">Delete picture</button>
+              </form>
+            <% } %>
           </div>
         <% }) %>
       </div>

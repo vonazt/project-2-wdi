@@ -1,0 +1,24 @@
+.gallery-info {
+  color: $main-green;
+  padding: .5em;
+}
+
+
+
+.add-gallery-picture {
+  font-family: $main-font;
+  color: $main-green;
+  border: none;
+  text-decoration: underline;
+  font-size: 2em;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.delete-gallery-picture {
+  font-family: $main-font;
+  color: $main-green;
+  border: none;
+  cursor: pointer;
+  align-items: flex-end;
+}
