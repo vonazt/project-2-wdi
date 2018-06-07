@@ -5,8 +5,15 @@
   }
 }
 
+.back-div {
+  margin-left: .7em;
+}
+
 a {
   color: $main-green;
+  .back-to-plant {
+    margin-left: 5em;
+  }
 }
 
 .show-list {

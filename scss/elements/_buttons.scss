@@ -22,5 +22,9 @@
   }
   strong {
     color: $main-green;
+    font-weight: 700;
+    &:hover {
+      color: #363636;
+    }
   }
 }

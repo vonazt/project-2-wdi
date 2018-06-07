@@ -55,8 +55,13 @@
   .show-details strong {
     font-weight: 700; }
 
+.back-div {
+  margin-left: .7em; }
+
 a {
   color: #228b22; }
+  a .back-to-plant {
+    margin-left: 5em; }
 
 .show-list {
   margin-top: 2.5em; }
@@ -168,7 +173,10 @@ a {
   #delete-button:hover {
     color: #363636; }
   #delete-button strong {
-    color: #228b22; }
+    color: #228b22;
+    font-weight: 700; }
+    #delete-button strong:hover {
+      color: #363636; }
 
 body {
   font-family: "Poppins", sans-serif; }

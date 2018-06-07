@@ -1,11 +1,14 @@
 <section class="section">
   <div class="container">
     <h1 class="plant-heading"><%= plant.name%>'s Gallery <span class="gallery-planted-heading"> - planted on <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></span> </h1>
-
-
     <% if (locals.currentUser.id === plant.creator.toString()) { %>
-      <button class="add-gallery-picture" id="modal-button">Add a picture</button>
+      <button class="add-gallery-picture" id="modal-button">Add a picture</button><br/>
     <% } %>
+    <div class="back-div">
+      <a class="back-to-plant" href="/plants/<%= plant.id %>">Back to plant</a>
+    </div>
+
+
       <div class="columns is-multiline">
         <div class="column is-one-quarter-dekstop is-one-third-tablet">
           <figure class="image is-square">
