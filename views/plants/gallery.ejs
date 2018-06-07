@@ -1,6 +1,7 @@
 <section class="section">
   <div class="container">
-    <h1 class="plant-heading"><%= plant.name%>'s Gallery</h1>
+    <h1 class="plant-heading"><%= plant.name%>'s Gallery <span class="gallery-planted-heading"> - planted on <%= plant.datePlanted.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'}) %></span> </h1>
+
 
     <% if (locals.currentUser.id === plant.creator.toString()) { %>
       <button class="add-gallery-picture" id="modal-button">Add a picture</button>

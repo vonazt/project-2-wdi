@@ -18,6 +18,11 @@
   font-family: "Poppins", sans-serif;
   margin-bottom: .5em; }
 
+.gallery-planted-heading {
+  font-size: .5em;
+  color: #228b22;
+  font-family: "Poppins", sans-serif; }
+
 .show-plant-heading {
   margin-left: 1em;
   margin-bottom: .3em;
